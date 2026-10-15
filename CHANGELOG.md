@@ -12,6 +12,9 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Sonne/Mond-Knopf in der Kopfleiste: schaltet zwischen hellem und dunklem Design um. Die
+  Wahl bleibt gespeichert und ist dieselbe wie die Theme-Auswahl in der Token-Lektion; ohne
+  eigene Wahl gilt weiter die Systemeinstellung.
 - Neue Startseiten-Kachel für den ARIA-Kompass, die Schwester-App zu WAI-ARIA. Die Buttons
   zu CSS-Atlas und ARIA-Kompass tragen ein Symbol für externe Links.
 - Zweisprachig: Die ganze App gibt es auf Deutsch und Englisch – Lektionen, Live-Beispiele,
