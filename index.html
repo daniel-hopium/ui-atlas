@@ -1091,6 +1091,141 @@ dialog.sheet{margin:auto auto 0;width:min(560px,100%);max-width:100%;border-radi
 .du-end-card{padding:20px;border:1.5px solid var(--line);border-radius:var(--radius-lg);background:var(--surface)}
 .lesson .du-end-card h2{margin:0 0 8px}
 .du-end-card ul{margin:0 0 16px;padding-left:1.2em;display:grid;gap:4px}
+/* Gut & Schlecht: Feinschliff */
+.du-br{border:1px solid var(--line-strong);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.du-br-bar{display:flex;padding:6px 6px 0;background:var(--surface-2)}
+.du-br-tab{display:inline-flex;align-items:center;gap:6px;max-width:100%;min-width:0;padding:6px 12px;border-radius:8px 8px 0 0;background:var(--surface);font-size:.8125rem;font-weight:700}
+.du-br-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.du-br-fav{width:12px;height:12px;border-radius:3px;background:var(--brand);flex:none;position:relative}
+.du-br-fav.du-dot::after{content:"";position:absolute;top:-4px;right:-4px;width:8px;height:8px;border-radius:50%;background:var(--danger);box-shadow:0 0 0 1.5px var(--surface)}
+.du-br-url{display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--line)}
+.du-br-reload{width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;flex:none}
+.du-br-reload:hover{background:var(--surface-2)}
+.du-br-reload .ic{width:18px;height:18px}
+.du-br-addr{flex:1;min-width:0;padding:4px 10px;border-radius:999px;background:var(--surface-2);font:500 .8125rem/1.35 var(--font-mono);overflow-wrap:anywhere}
+.du-br-body{padding:12px;display:grid;gap:10px;transition:opacity .1s}
+.du-reloading{opacity:.25}
+.du-ta{min-height:5.5em;padding:10px 14px;resize:vertical;line-height:1.45}
+.du-ld{margin:0;min-height:28px;display:flex;align-items:center;gap:6px;font-weight:700}
+.du-ld .ic{width:18px;height:18px;color:var(--success)}
+.du-ppl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.du-ppl li{display:flex;gap:10px;align-items:center;min-height:44px}
+.du-av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);font-weight:800;flex:none}
+.du-ppl b,.du-ppl small{display:block;line-height:1.3}
+.du-ppl small{color:var(--muted);font-size:.8125rem}
+.du-sk-l{display:grid;gap:6px}
+.du-sk-l .skel{display:block;height:12px;max-width:100%}
+.du-sk-bad{display:grid;gap:8px}
+.du-sk-bad .skel{display:block;height:10px}
+.du-links{margin:0;padding-left:1.2em;display:grid;gap:8px}
+.du-mm{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.du-mm-cats{list-style:none;margin:0;padding:4px;background:var(--surface-2)}
+.du-mm button{width:100%;min-height:44px;padding:0 12px;border:0;border-radius:var(--radius-sm);background:transparent;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.du-mm-cats button{font-weight:700}
+.du-mm-cats [aria-expanded="true"]{background:var(--surface);color:var(--brand)}
+.du-mm-sub{padding:10px 8px}
+.du-mm-sub>b{display:block;padding:0 12px}
+.du-mm-sub ul{list-style:none;margin:4px 0 0;padding:0}
+.du-mm-sub button:hover{background:var(--surface-2)}
+.du-restored{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px;border-radius:var(--radius-sm);background:var(--brand-soft);font-size:.875rem}
+.du-restored .ic{width:18px;height:18px;color:var(--brand)}
+.du-lv:empty{display:none}
+.du-sess{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;min-height:44px;padding:6px 12px;border-radius:var(--radius-sm);background:var(--surface-2);font-size:.875rem}
+.du-sess-warn{background:var(--warn-bg);font-weight:700}
+.du-sess-err{background:var(--danger-bg);color:var(--danger);font-weight:700}
+.du-q{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.du-q:empty{display:none}
+.du-q li{display:grid;gap:2px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--radius-sm);font-size:.9375rem}
+.du-q small{display:inline-flex;align-items:center;gap:4px;font-size:.8125rem;font-weight:700}
+.du-q small .ic{width:15px;height:15px}
+.du-pend{color:var(--muted)}
+.du-sent{color:var(--success)}
+.du-pre{white-space:pre-wrap}
+.du-rt:empty{display:none}
+.du-rt p{margin:0}
+.du-kb-f{display:grid;grid-template-columns:repeat(auto-fit,minmax(8em,1fr));gap:10px}
+.du-kb-out{min-height:150px;display:grid;align-content:start;gap:6px}
+.du-kb-n{margin:0;font-weight:700;font-size:.875rem}
+.du-kb{padding:6px;border-radius:var(--radius-sm);background:var(--surface-2);display:grid;gap:4px}
+.du-kr{display:flex;justify-content:center;gap:3px}
+.du-k{flex:1 1 0;max-width:2.1em;min-width:0;height:26px;display:grid;place-items:center;border-radius:4px;background:var(--surface);box-shadow:0 1px 0 var(--line-strong);font:500 .75rem/1 var(--font-mono)}
+.du-k-alt{background:var(--line)}
+.du-k-w{max-width:3.2em;flex:1.5 1 0}
+.du-k-sp{max-width:none;flex:5 1 0}
+.du-k-hit{background:var(--brand-soft);color:var(--ink);font-weight:800}
+.du-kpad{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.du-kpad .du-k{max-width:none;height:30px;font-size:.875rem}
+.du-otp{display:grid;grid-template-columns:repeat(6,minmax(0,2.75rem));gap:6px}
+.du-otp .input{padding:0;text-align:center;font:700 1.125rem/1 var(--font-mono)}
+.du-cnt{margin:0;min-height:1.4em;font-size:.875rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.du-cnt-near{color:var(--ink);font-weight:700}
+.du-cnt-over{color:var(--danger);font-weight:700}
+.du-res-l{list-style:none;margin:0;padding:0}
+.du-res-l li,.du-tasks li{display:flex;justify-content:space-between;gap:4px 8px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
+.du-scr{height:210px;overflow:auto;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.du-ord{list-style:none;margin:0;padding:0}
+.du-ord li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--line)}
+.du-ord button{min-height:40px;padding:0;border:0;background:transparent;color:var(--brand);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+.du-ord-d{padding:12px;display:grid;gap:6px;justify-items:start}
+.du-ord-d p{margin:0}
+.du-seg{display:inline-flex;border:1.5px solid var(--line-strong);border-radius:var(--radius-ctl);overflow:hidden}
+.du-seg button{min-height:36px;padding:0 12px;border:0;background:var(--surface);color:var(--ink);font:inherit;font-size:.875rem;font-weight:700;cursor:pointer}
+.du-seg button+button{border-left:1px solid var(--line-strong)}
+.du-seg [aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.du-tasks{list-style:none;margin:0;padding:0}
+.du-done>span:first-child{text-decoration:line-through;color:var(--muted)}
+.du-rows .btn .ic{width:18px;height:18px}
+.du-fo{min-height:1.45em}
+.du-pill-slot{min-height:36px;display:flex;justify-content:center;align-items:flex-start}
+.du-pill{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:0 14px;border:0;border-radius:999px;background:var(--brand);color:var(--brand-ink);font:inherit;font-size:.875rem;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+.du-pill .ic{width:16px;height:16px}
+.du-feed-l{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.du-feed-l li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 8px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--radius-sm);font-size:.875rem}
+.du-feed-l li span{color:var(--muted)}
+.du-feed-l li button{grid-column:2;grid-row:1/3;align-self:center;min-height:32px}
+.du-mail{list-style:none;margin:0;padding:0}
+.du-mail button{width:100%;min-height:40px;padding:0 6px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);font:inherit;font-size:.875rem;text-align:left;cursor:pointer}
+.du-unread button{color:var(--ink);font-weight:700}
+.du-unread button b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brand);margin-right:6px;vertical-align:1px}
+.du-fl-h{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.du-fl{list-style:none;margin:0 0 8px;padding:0;user-select:none;-webkit-user-select:none}
+.du-fl .du-choice{min-height:36px;font:500 .875rem/1.3 var(--font-mono)}
+.du-copy{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.du-copy code{padding:6px 10px;border-radius:var(--radius-sm);background:var(--surface-2);font:500 .8125rem/1.3 var(--font-mono);overflow-wrap:anywhere}
+.du-cp-ic{display:inline-grid}
+.du-cp-ic .ic{width:18px;height:18px}
+.du-swap{display:inline-grid}
+.du-swap>span{grid-area:1/1}
+.du-l2,.du-copied .du-l1{visibility:hidden}
+.du-copied .du-l2{visibility:visible}
+.btn.du-copied{color:var(--success);border-color:var(--success)}
+.du-cmts{list-style:none;margin:0;padding:0}
+.du-cmts li{display:flex;justify-content:space-between;align-items:baseline;gap:4px 10px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
+.du-cmts time{color:var(--muted);font-size:.8125rem;white-space:nowrap}
+.du-cmts time[title]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+.du-pl p{margin:0}
+.du-imgslot .du-img{height:auto;aspect-ratio:16/9;transition:filter .5s,transform .5s}
+.du-imgslot-good{aspect-ratio:16/9;overflow:hidden;border-radius:var(--radius-sm);background:var(--surface-2)}
+.du-blur{filter:blur(12px) saturate(.8);transform:scale(1.08)}
+.du-app-hint{margin:0 0 8px}
+.du-app{position:relative;min-height:250px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--surface)}
+.du-app:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.du-app-tb{display:flex;gap:6px;flex-wrap:wrap;padding:6px;border-bottom:1px solid var(--line)}
+.du-app-tb kbd{font-size:.7rem}
+.du-app-l{list-style:none;margin:0;padding:4px}
+.du-app-l li{padding:8px 10px;border-radius:var(--radius-sm);font-size:.875rem;cursor:pointer}
+.du-app-l li.on{background:var(--brand-soft);box-shadow:inset 3px 0 0 var(--brand)}
+.du-app-s{padding:0 10px 8px;min-height:1.6em}
+.du-ov{position:absolute;inset:0;display:grid;place-items:start center;padding:16px;border-radius:inherit;background:color-mix(in srgb,var(--ink) 25%,transparent)}
+.du-ov-in{width:min(100%,22rem);display:grid;gap:10px;padding:14px;border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow)}
+.du-ov dl{margin:0;display:grid;gap:6px}
+.du-ov dl div{display:flex;gap:10px;align-items:baseline}
+.du-ov dt{min-width:5.5em}
+.du-ov dd{margin:0;font-size:.9375rem}
+.du-pal{list-style:none;margin:0;padding:0;display:grid;gap:2px;max-height:170px;overflow:auto}
+.du-pal li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--radius-sm);font-size:.9375rem;cursor:pointer}
+.du-pal li[aria-selected="true"]{background:var(--brand-soft)}
+@media (prefers-reduced-motion: reduce){.du-imgslot .du-img{transition:none}}
 @media (prefers-reduced-motion: reduce){.du-spin{animation-duration:2.4s}}
 a.logo{color:inherit;text-decoration:none;border-radius:var(--radius-sm);padding:2px 8px 2px 2px;margin-left:-2px}
 a.logo:hover{background:var(--surface-2)}
@@ -3662,7 +3797,7 @@ const KOMPASS=[
 const K_BY_ID=Object.fromEntries(KOMPASS.map(k=>[k.id,k]));
 
 /* ---------- Gut & Schlecht ---------- */
-const D_GROUPS=tx(['Formulare','Buttons & Klicks','Feedback','Text & Layout','Navigation & Inhalte'],['Forms','Buttons & clicks','Feedback','Text & layout','Navigation & content']);
+const D_GROUPS=tx(['Formulare','Buttons & Klicks','Feedback','Text & Layout','Navigation & Inhalte','Feinschliff'],['Forms','Buttons & clicks','Feedback','Text & layout','Navigation & content','Polish']);
 const duValid=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 const duTime=()=>new Intl.DateTimeFormat(LOCALE,{hour:'2-digit',minute:'2-digit'}).format(new Date());
 function duList(el,names,bad){
@@ -3684,6 +3819,510 @@ function duList(el,names,bad){
 }
 
 const duLorem=()=>tx(['Bestellungen bis 14 Uhr verlassen unser Lager am selben Werktag.','Die Zustellung dauert innerhalb Österreichs ein bis zwei Werktage, nach Deutschland zwei bis drei.','Ab 50 Euro Bestellwert ist der Versand kostenlos, darunter kostet er 4,90 Euro.','Rücksendungen sind innerhalb von 30 Tagen kostenlos. Das Etikett liegt dem Paket bei.','Die Erstattung geht auf das ursprüngliche Zahlungsmittel, meist innerhalb von fünf Werktagen.','Bei Fragen erreichst du den Kundendienst werktags von 8 bis 18 Uhr.'],['Orders placed by 2 p.m. leave our warehouse the same business day.','Delivery within Austria takes one to two business days, to Germany two to three.','Shipping is free on orders of €50 or more; below that it costs €4.90.','Returns are free within 30 days. The return label is included in the package.','Refunds go back to the original payment method, usually within five business days.','If you have questions, our customer service team is available weekdays from 8 a.m. to 6 p.m.']).map(t=>`<p>${t}</p>`).join('');
+/* ---------- Gut & Schlecht: Feinschliff ----------
+   Bausteine für die Paare im Bereich „Feinschliff“. Die *HTML-Funktionen liefern das Markup (bad und good
+   meist gleich, das Verhalten unterscheidet init), die übrigen machen es lebendig. */
+const duLater=(el,fn,ms)=>setTimeout(()=>{if(el.isConnected)fn()},ms);
+const duMod=()=>/Mac|iPhone|iPad/.test(navigator.platform||'')?'⌘':tx('Strg','Ctrl');
+/* Mini-Browser mit Tab-Titel, Neuladen-Knopf und Adresszeile */
+const duFrame=(title,url,body)=>`<div class="du-br"><div class="du-br-bar"><span class="du-br-tab"><span class="du-br-fav" aria-hidden="true"></span><span class="du-br-title">${title}</span></span></div><div class="du-br-url"><button type="button" class="du-br-reload" aria-label="${tx('Seite neu laden','Reload page')}">${ic('refresh')}</button><span class="du-br-addr">${url}</span></div><div class="du-br-body">${body}</div></div>`;
+function duReload(el,after){
+  const body=$('.du-br-body',el);
+  $('.du-br-reload',el).addEventListener('click',()=>{body.classList.add('du-reloading');duLater(el,()=>{body.classList.remove('du-reloading');after();announce(tx('Seite neu geladen.','Page reloaded.'))},450)});
+}
+
+/* Spinner mit Verzögerung */
+function duSpinHTML(){return `<div class="du-stack"><div class="btn-row">${[[120,tx('Schnelle Antwort','Fast response')],[380,tx('Mittlere Antwort','Medium response')],[1800,tx('Langsame Antwort','Slow response')]].map(([ms,l])=>`<button type="button" class="btn btn-secondary du-sm" data-ms="${ms}">${l}</button>`).join('')}</div><p class="du-ld" role="status"></p></div>`}
+function duSpinDelay(el,good){
+  const box=$('.du-ld',el);let run=0;
+  el.addEventListener('click',e=>{
+    const b=e.target.closest('[data-ms]');if(!b)return;
+    const id=++run;let shown=0,st=null;
+    box.innerHTML='';
+    const spin=()=>{if(id!==run)return;shown=Date.now();box.innerHTML=`<span class="du-spin du-spin-inline"></span>${tx('Lädt …','Loading…')}`};
+    const done=()=>{if(id===run&&el.isConnected)box.innerHTML=`${ic('check')} ${tx('3 Einträge geladen.','3 items loaded.')}`};
+    if(good)st=setTimeout(spin,300);else spin();
+    setTimeout(()=>{clearTimeout(st);if(shown&&good)setTimeout(done,Math.max(0,500-(Date.now()-shown)));else done()},+b.dataset.ms);
+  });
+}
+
+/* Skeleton in Form des Inhalts */
+function duSkelHTML(){return `<div class="du-stack"><div class="du-sk"></div><div class="btn-row"><button type="button" class="btn btn-secondary du-sm du-add">${ic('plus')} ${tx('Kontakt hinzufügen','Add contact')}</button><button type="button" class="linkbtn du-replay">${tx('Neu laden','Reload')}</button></div></div>`}
+function duSkel(el,good){
+  const box=$('.du-sk',el);
+  const ppl=tx([['Lena Hofer','Projektleitung · Graz'],['Jonas Berger','Design · Wien']],[['Lena Hofer','Project lead · Graz'],['Jonas Berger','Design · Vienna']]);
+  const real=`<ul class="du-ppl">${ppl.map(([n,r])=>`<li><span class="du-av" aria-hidden="true">${n[0]}</span><span><b>${n}</b><small>${r}</small></span></li>`).join('')}</ul>`;
+  const skel=good?`<ul class="du-ppl" aria-hidden="true">${ppl.map(()=>`<li><span class="du-av skel"></span><span class="du-sk-l"><span class="skel" style="width:7em"></span><span class="skel" style="width:10em"></span></span></li>`).join('')}</ul>`
+    :`<div class="du-sk-bad" aria-hidden="true"><span class="skel"></span><span class="skel"></span><span class="skel"></span></div>`;
+  let t;
+  const play=()=>{clearTimeout(t);box.setAttribute('aria-busy','true');box.innerHTML=skel;t=duLater(el,()=>{box.innerHTML=real;box.removeAttribute('aria-busy')},1600)};
+  el.addEventListener('click',e=>{if(e.target.closest('.du-replay'))play();if(e.target.closest('.du-add'))toast({msg:tx('Neuer Kontakt angelegt.','New contact created.'),duration:2500})});
+  play();
+}
+
+/* Vorladen bei Absicht */
+function duPrefetchHTML(){return `<div class="du-stack"><ul class="du-links">${tx(['Wanderung auf den Schöckl','Runde um den Grundlsee','Dachstein-Gletscher'],['Schöckl hike','Grundlsee loop','Dachstein glacier']).map(n=>`<li><a href="#" data-n="${n}">${n}</a></li>`).join('')}</ul><p class="du-out du-pf" role="status"></p></div>`}
+function duPrefetch(el,good){
+  const out=$('.du-pf',el),cache=new Map(),LOAD=900;
+  const load=n=>{if(!good)return new Promise(r=>setTimeout(r,LOAD));if(!cache.has(n))cache.set(n,new Promise(r=>setTimeout(r,LOAD)));return cache.get(n)};
+  if(good){const pre=e=>{const a=e.target.closest('a[data-n]');if(a)load(a.dataset.n)};el.addEventListener('pointerover',pre);el.addEventListener('focusin',pre)}
+  el.addEventListener('click',e=>{
+    const a=e.target.closest('a[data-n]');if(!a)return;
+    const t0=performance.now(),n=a.dataset.n;out.textContent=tx('Lädt …','Loading…');
+    load(n).then(()=>{if(el.isConnected)out.textContent=tx(`„${n}“ geöffnet – nach ${Math.round(performance.now()-t0)} ms.`,`“${n}” opened – after ${Math.round(performance.now()-t0)} ms.`)});
+  });
+}
+
+/* Mega-Menü mit Hover-Intent */
+function duMegaHTML(){return `<div class="du-mm"><ul class="du-mm-cats"></ul><div class="du-mm-sub"></div></div><p class="du-out" role="status"></p>`}
+function duMega(el,good){
+  const cats=tx([['Kleidung',['Jacken','Hosen','Pullover','Socken']],['Schuhe',['Wanderschuhe','Sandalen','Laufschuhe','Gamaschen']],['Zelte',['Kuppelzelte','Tunnelzelte','Tarps','Heringe']],['Rucksäcke',['Tagesrucksäcke','Trekking','Hüfttaschen','Regenhüllen']]],
+    [['Clothing',['Jackets','Pants','Sweaters','Socks']],['Shoes',['Hiking boots','Sandals','Running shoes','Gaiters']],['Tents',['Dome tents','Tunnel tents','Tarps','Pegs']],['Backpacks',['Daypacks','Trekking','Hip packs','Rain covers']]]);
+  const list=$('.du-mm-cats',el),sub=$('.du-mm-sub',el),out=$('.du-out',el);let cur=-1,t;
+  list.innerHTML=cats.map(([n],i)=>`<li><button type="button" data-c="${i}" aria-expanded="false">${n}</button></li>`).join('');
+  const open=i=>{if(i===cur)return;cur=i;$$('[data-c]',el).forEach(b=>b.setAttribute('aria-expanded',String(+b.dataset.c===i)));
+    sub.innerHTML=`<b>${cats[i][0]}</b><ul>${cats[i][1].map(s=>`<li><button type="button" data-s>${s}</button></li>`).join('')}</ul>`};
+  el.addEventListener('pointerover',e=>{
+    const b=e.target.closest('[data-c]');
+    if(b){clearTimeout(t);const i=+b.dataset.c;if(good)t=setTimeout(()=>open(i),300);else open(i);return}
+    if(e.target.closest('.du-mm-sub'))clearTimeout(t);
+  });
+  el.addEventListener('click',e=>{
+    const b=e.target.closest('[data-c]');if(b){clearTimeout(t);open(+b.dataset.c);return}
+    const s=e.target.closest('[data-s]');if(s)out.textContent=tx(`„${s.textContent}“ gewählt.`,`“${s.textContent}” selected.`);
+  });
+  el.addEventListener('focusin',e=>{const b=e.target.closest('[data-c]');if(b){clearTimeout(t);open(+b.dataset.c)}});
+  open(0);
+}
+
+/* Entwurf wiederherstellen */
+function duDraftHTML(){return duFrame(tx('Nachricht – Support','Message – Support'),tx('support.example/neu','support.example/new'),`<div class="du-stack"><div class="du-restored" hidden></div><div class="field"><label for="{p}">${tx('Deine Nachricht','Your message')}</label><textarea class="input du-ta" id="{p}" rows="3"></textarea></div></div>`)}
+function duDraft(el,good){
+  const ta=$('textarea',el),note=$('.du-restored',el);let draft='';
+  ta.addEventListener('input',()=>{if(good)draft=ta.value});
+  duReload(el,()=>{ta.value='';note.hidden=true;
+    if(good&&draft){ta.value=draft;note.innerHTML=`${ic('info')}<span>${tx('Entwurf wiederhergestellt.','Draft restored.')}</span><button type="button" class="linkbtn">${tx('Verwerfen','Discard')}</button>`;note.hidden=false}});
+  note.addEventListener('click',e=>{if(e.target.closest('button')){draft='';ta.value='';note.hidden=true;ta.focus()}});
+}
+
+/* Warnen beim Verlassen */
+function duLeaveHTML(){return `<div class="du-stack"><div class="du-stack du-view"><div class="field"><label for="{p}">${tx('Titel','Title')}</label><input class="input" id="{p}" value="${tx('Wochenplan','Weekly plan')}"></div><div class="btn-row"><button type="button" class="btn btn-primary du-sm du-save">${tx('Speichern','Save')}</button><button type="button" class="btn btn-ghost du-sm du-leave">${ic('back')} ${tx('Zur Übersicht','Back to overview')}</button></div></div><div class="du-lv"></div></div>`}
+function duLeave(el,good){
+  const i=$('input',el),view=$('.du-view',el),box=$('.du-lv',el);let saved=i.value;
+  const say=m=>{box.innerHTML=`<p class="du-out">${m}</p>`;announce(m)};
+  const leave=m=>{view.hidden=true;box.innerHTML=`<p class="du-out">${m}</p><button type="button" class="linkbtn du-back">${tx('Zurück zum Formular','Back to the form')}</button>`;announce(m);$('.du-back',box).focus()};
+  el.addEventListener('click',e=>{
+    if(e.target.closest('.du-save')){saved=i.value;say(tx('Gespeichert.','Saved.'));return}
+    if(e.target.closest('.du-leave')){
+      if(i.value===saved){leave(tx('Übersicht geöffnet.','Overview opened.'));return}
+      if(!good){i.value=saved;leave(tx('Übersicht geöffnet. Deine Änderung am Titel ist weg.','Overview opened. Your change to the title is gone.'));return}
+      box.innerHTML=`<div class="du-dlg" role="group" aria-labelledby="${i.id}-q"><p id="${i.id}-q"><b>${tx('Änderung am Titel speichern?','Save the change to the title?')}</b></p><div class="btn-row"><button type="button" class="btn btn-primary du-sm" data-a="save">${tx('Speichern und verlassen','Save and leave')}</button><button type="button" class="btn btn-secondary du-sm" data-a="drop">${tx('Verwerfen','Discard')}</button><button type="button" class="btn btn-ghost du-sm" data-a="stay">${tx('Weiter bearbeiten','Keep editing')}</button></div></div>`;
+      $('[data-a="save"]',box).focus();return;
+    }
+    const a=e.target.closest('[data-a]');
+    if(a){const v=a.dataset.a;
+      if(v==='save'){saved=i.value;leave(tx('Gespeichert, Übersicht geöffnet.','Saved, overview opened.'))}
+      else if(v==='drop'){i.value=saved;leave(tx('Verworfen, Übersicht geöffnet.','Discarded, overview opened.'))}
+      else{box.innerHTML='';i.focus()}
+      return}
+    if(e.target.closest('.du-back')){view.hidden=false;box.innerHTML='';i.focus()}
+  });
+}
+
+/* Sitzungsende ankündigen */
+function duSessHTML(){return `<div class="du-stack"><div class="du-sess"></div><div class="field"><label for="{p}">${tx('Bericht','Report')}</label><textarea class="input du-ta" id="{p}" rows="3">${tx('Die Kundin hat heute angerufen und ','The client called today and ')}</textarea></div><button type="button" class="linkbtn du-replay">${tx('Demo neu starten','Restart demo')}</button></div>`}
+function duSession(el,good){
+  const LEN=12,WARN=6,ta=$('textarea',el),s=$('.du-sess',el),orig=ta.value;let left=0,iv=null,ran=false;
+  const show=(cls,html)=>{s.className='du-sess'+(cls?' '+cls:'');s.innerHTML=html};
+  const intro=()=>show('',tx('Klick ins Textfeld, dann startet die Demo. Die Sitzung dauert hier nur 12 Sekunden.','Click into the text field to start the demo. The session lasts only 12 seconds here.'));
+  const stop=()=>{clearInterval(iv);iv=null};
+  const tick=()=>{
+    if(!el.isConnected)return stop();
+    left--;
+    if(left<=0){stop();ta.disabled=true;
+      if(good){show('du-sess-warn',`<span>${tx('Du wurdest abgemeldet. Dein Text ist gesichert.','You were signed out. Your text is saved.')}</span><button type="button" class="btn btn-primary du-sm" data-login>${tx('Anmelden und weiterschreiben','Sign in and keep writing')}</button>`)}
+      else{ta.value='';show('du-sess-err',`<span>${tx('Sitzung abgelaufen. Bitte erneut anmelden.','Session expired. Please sign in again.')}</span><button type="button" class="btn btn-primary du-sm" data-login>${tx('Anmelden','Sign in')}</button>`)}
+      announce(good?tx('Du wurdest abgemeldet. Dein Text ist gesichert.','You were signed out. Your text is saved.'):tx('Sitzung abgelaufen.','Session expired.'),true);
+      return}
+    if(good&&left===WARN){show('du-sess-warn',`<span>${tx('Du wirst in <b class="du-left"></b> abgemeldet.','You’ll be signed out in <b class="du-left"></b>.')}</span><button type="button" class="btn btn-secondary du-sm" data-extend>${tx('Angemeldet bleiben','Stay signed in')}</button>`);
+      announce(tx(`Du wirst in ${WARN} Sekunden abgemeldet.`,`You’ll be signed out in ${WARN} seconds.`),true)}
+    const l=$('.du-left',s);if(l)l.textContent=`0:${String(left).padStart(2,'0')}`;
+  };
+  ta.addEventListener('focus',()=>{if(ran)return;ran=true;left=LEN;show('',tx('Angemeldet.','Signed in.'));iv=setInterval(tick,1000)});
+  el.addEventListener('click',e=>{
+    if(e.target.closest('[data-extend]')){left=LEN;show('',tx('Sitzung verlängert.','Session extended.'));ta.focus();return}
+    if(e.target.closest('[data-login]')){ta.disabled=false;show('',tx('Wieder angemeldet.','Signed in again.'));ta.focus();return}
+    if(e.target.closest('.du-replay')){stop();ran=false;ta.disabled=false;ta.value=orig;intro()}
+  });
+  intro();
+}
+
+/* Offline-Warteschlange */
+function duQueueHTML(){return `<div class="du-stack"><div><button type="button" class="btn btn-secondary du-sm du-net" aria-pressed="false">${ic('wifioff')} ${tx('Offline gehen','Go offline')}</button></div><form class="du-search"><input class="input" aria-label="${tx('Kommentar','Comment')}" value="${tx('Bin um 18 Uhr da.','I’ll be there at 6.')}"><button class="btn btn-primary">${tx('Senden','Send')}</button></form><p class="err du-qerr" role="alert" hidden></p><ul class="du-q"></ul></div>`}
+function duQueue(el,good){
+  const q=$('.du-q',el),i=$('input',el),net=$('.du-net',el),err=$('.du-qerr',el);let online=true;
+  const sent=s=>{s.className='du-sent';s.innerHTML=ic('check')+tx('Gesendet','Sent')};
+  const add=(t,pending)=>{const li=document.createElement('li');li.innerHTML='<span></span><small></small>';$('span',li).textContent=t;const s=$('small',li);
+    if(pending){s.className='du-pend';s.innerHTML=ic('refresh')+tx('Wird gesendet, sobald du wieder online bist','Will be sent once you’re back online')}else sent(s);q.append(li)};
+  net.addEventListener('click',()=>{
+    online=!online;net.setAttribute('aria-pressed',String(!online));
+    net.innerHTML=online?`${ic('wifioff')} ${tx('Offline gehen','Go offline')}`:`${ic('refresh')} ${tx('Wieder online gehen','Go back online')}`;
+    announce(online?tx('Wieder online.','Back online.'):tx('Offline.','Offline.'));
+    if(online)$$('.du-pend',q).forEach((s,k)=>duLater(el,()=>sent(s),600+k*300));
+  });
+  $('form',el).addEventListener('submit',e=>{
+    e.preventDefault();const t=i.value.trim();if(!t)return;err.hidden=true;
+    if(online||good){add(t,!online);i.value='';return}
+    err.innerHTML=ic('alert')+tx('Netzwerkfehler. Kommentar konnte nicht gesendet werden.','Network error. The comment could not be sent.');err.hidden=false;i.value='';
+  });
+}
+
+/* Automatisch erneut versuchen */
+function duRetryHTML(){return `<div class="du-stack"><div><button type="button" class="btn btn-secondary du-sm du-go">${tx('Kontoauszüge laden','Load statements')}</button></div><div class="du-rt" role="status"></div></div>`}
+function duRetry(el,good){
+  const box=$('.du-rt',el);let calls=0,busy=false;
+  const call=()=>new Promise(r=>setTimeout(()=>r(++calls>=3),500));
+  const ok=()=>{calls=0;box.innerHTML=`<p class="du-ok">${ic('check')} ${tx('3 Kontoauszüge geladen.','3 statements loaded.')}</p>`};
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  el.addEventListener('click',async e=>{
+    if(!e.target.closest('.du-go,.du-go2')||busy)return;busy=true;
+    box.innerHTML=`<p class="hint"><span class="du-spin du-spin-inline"></span>${tx('Lädt …','Loading…')}</p>`;
+    if(!good){const r=await call();busy=false;if(!el.isConnected)return;if(r)ok();else box.innerHTML='<p class="du-code">Error: Request failed with status code 503</p>';return}
+    for(let n=1;n<=3;n++){
+      const r=await call();if(!el.isConnected)return;
+      if(r){busy=false;ok();return}
+      if(n<3){box.innerHTML=`<p class="hint"><span class="du-spin du-spin-inline"></span>${tx(`Der Server antwortet gerade nicht. Versuch ${n+1} von 3 in ${n} s …`,`The server isn’t responding right now. Attempt ${n+1} of 3 in ${n} s…`)}</p>`;await wait(n*1000)}
+    }
+    busy=false;
+    box.innerHTML=`<div class="du-errbox"><b>${ic('alert')}${tx('Gerade nicht erreichbar','Not reachable right now')}</b><p>${tx('Wir haben es dreimal versucht. Deine Daten sind sicher.','We tried three times. Your data is safe.')}</p><button type="button" class="btn btn-secondary du-sm du-go2">${tx('Erneut versuchen','Try again')}</button></div>`;
+  });
+}
+
+/* Tolerante Eingabe */
+function duTolHTML(){return `<form class="du-stack" novalidate><div class="field"><label for="{p}">${tx('Handynummer','Mobile number')}</label><input class="input" id="{p}" type="tel" autocomplete="tel" value="${tx(' +43 664 123 45 67','+1 (555) 123-4567 ')}" aria-describedby="{p}-e"><p class="err" id="{p}-e" hidden></p></div><div><button class="btn btn-primary du-sm">${tx('Weiter','Continue')}</button></div><p class="du-out" role="status"></p></form>`}
+function duTolerant(el,good){
+  const i=$('input',el),e=$('.err',el),o=$('.du-out',el);
+  $('form',el).addEventListener('submit',ev=>{
+    ev.preventDefault();o.textContent='';
+    const v=good?i.value.replace(/[\s\-\/().]/g,''):i.value;
+    const valid=good?/^\+?\d{7,15}$/.test(v):/^\+?\d+$/.test(v);
+    if(!valid){e.innerHTML=ic('alert')+(good?tx('Die Nummer braucht mindestens 7 Ziffern.','The number needs at least 7 digits.'):tx('Ungültiges Format. Nur Ziffern ohne Leerzeichen erlaubt.','Invalid format. Only digits without spaces allowed.'));e.hidden=false;i.setAttribute('aria-invalid','true');i.focus();return}
+    e.hidden=true;i.removeAttribute('aria-invalid');o.textContent=tx(`Gespeichert: ${v}`,`Saved: ${v}`);
+  });
+}
+
+/* Passende Handy-Tastatur */
+function duKbHTML(good){
+  const f=[['plz',tx('PLZ','ZIP code'),good?'inputmode="numeric" autocomplete="postal-code"':''],['amt',tx('Betrag','Amount'),good?'inputmode="decimal"':''],['mail',tx('E-Mail','Email'),good?'type="email" autocomplete="email"':''],['tel',tx('Telefon','Phone'),good?'type="tel" autocomplete="tel"':'']];
+  const kb={plz:'numeric',amt:'decimal',mail:'email',tel:'tel'};
+  return `<div class="du-stack"><div class="du-kb-f">${f.map(([k,l,a])=>`<div class="field"><label for="{p}-${k}">${l}</label><input class="input" id="{p}-${k}" ${a||'type="text"'} data-kb="${good?kb[k]:'text'}"></div>`).join('')}</div><div class="du-kb-out" aria-hidden="true"><p class="hint">${tx('Tipp in ein Feld, um die Handy-Tastatur zu sehen.','Click into a field to see the phone keyboard.')}</p></div></div>`;
+}
+function duKb(el){
+  const out=$('.du-kb-out',el);
+  const rows=tx(['qwertzuiop','asdfghjkl','yxcvbnm'],['qwertyuiop','asdfghjkl','zxcvbnm']);
+  const key=(k,c='')=>`<span class="du-k${c?' '+c:''}">${k}</span>`;
+  const letters=bottom=>rows.map(r=>`<div class="du-kr">${[...r].map(k=>key(k)).join('')}</div>`).join('')+`<div class="du-kr">${bottom}</div>`;
+  const pad=extra=>`<div class="du-kpad">${[1,2,3,4,5,6,7,8,9].map(n=>key(n)).join('')}${key(extra,'du-k-alt')}${key(0)}${key('⌫','du-k-alt')}</div>`;
+  const KB={
+    text:[tx('Buchstaben – für Zahlen erst umschalten','Letters – switch layers for numbers'),letters(key('123','du-k-alt du-k-w')+key(tx('Leerzeichen','space'),'du-k-sp')+key('↵','du-k-alt du-k-w'))],
+    email:[tx('Buchstaben mit @ und Punkt','Letters with @ and period'),letters(key('123','du-k-alt du-k-w')+key('@','du-k-hit')+key(tx('Leerzeichen','space'),'du-k-sp')+key('.','du-k-hit')+key('↵','du-k-alt du-k-w'))],
+    numeric:[tx('Ziffernblock','Number pad'),pad('')],
+    decimal:[tx('Ziffernblock mit Komma','Number pad with decimal point'),pad(tx(',','.'))],
+    tel:[tx('Telefontastatur','Phone pad'),pad('+ * #')]
+  };
+  el.addEventListener('focusin',e=>{const i=e.target.closest('[data-kb]');if(!i)return;const [n,html]=KB[i.dataset.kb];out.innerHTML=`<p class="du-kb-n">${n}</p><div class="du-kb">${html}</div>`});
+}
+
+/* Einmalcode einfügen */
+function duOtpHTML(good){return `<div class="du-stack"><p class="hint">${tx('Dein Code per SMS:','Your code by text message:')} <b class="du-code-src">482913</b> <button type="button" class="linkbtn du-cp">${tx('kopieren','copy')}</button></p><fieldset class="du-fs"><legend>${tx('Bestätigungscode','Verification code')}</legend><div class="du-otp">${[1,2,3,4,5,6].map(n=>`<input class="input" ${good?`inputmode="numeric"${n===1?' autocomplete="one-time-code"':' autocomplete="off"'}`:'maxlength="1" autocomplete="off"'} aria-label="${tx(`Ziffer ${n} von 6`,`Digit ${n} of 6`)}">`).join('')}</div></fieldset><p class="du-out" role="status"></p></div>`}
+function duOtp(el,good){
+  const is=$$('.du-otp input',el),out=$('.du-out',el);
+  const check=()=>{const v=is.map(i=>i.value).join('');out.textContent=/^\d{6}$/.test(v)?(v==='482913'?tx('Code bestätigt.','Code confirmed.'):tx('Der Code stimmt nicht – prüf die SMS.','That code doesn’t match – check the text message.')):''};
+  $('.du-cp',el).addEventListener('click',e=>{const b=e.currentTarget;navigator.clipboard?.writeText('482913').then(()=>{b.textContent=tx('kopiert ✓','copied ✓')},()=>{})});
+  if(!good){is.forEach(i=>i.addEventListener('input',check));return}
+  const fill=(k,str)=>{let j=k;for(const c of str.replace(/\D/g,'')){if(j>5)break;is[j++].value=c}is[Math.min(j,5)].focus();check()};
+  is.forEach((i,k)=>{
+    i.addEventListener('paste',e=>{e.preventDefault();fill(k,(e.clipboardData||window.clipboardData).getData('text'))});
+    i.addEventListener('input',()=>{const v=i.value.replace(/\D/g,'');if(v.length>1){i.value='';fill(k,v);return}i.value=v;if(v&&k<5)is[k+1].focus();check()});
+    i.addEventListener('keydown',e=>{
+      if(e.key==='Backspace'&&!i.value&&k>0){e.preventDefault();is[k-1].value='';is[k-1].focus();check()}
+      else if(e.key==='ArrowLeft'&&k>0){e.preventDefault();is[k-1].focus()}
+      else if(e.key==='ArrowRight'&&k<5){e.preventDefault();is[k+1].focus()}
+    });
+    i.addEventListener('focus',()=>i.select());
+  });
+}
+
+/* Zeichenzähler */
+function duCountHTML(good){return `<div class="field"><label for="{p}">${tx('Kurzbeschreibung','Short description')}</label><textarea class="input du-ta" id="{p}" rows="2"${good?'':' maxlength="80"'} aria-describedby="{p}-c">${tx('Zweizimmerwohnung mit Balkon, ruhig gelegen','Two-room flat with balcony, quiet area')}</textarea><p class="du-cnt" id="{p}-c"></p></div>`}
+function duCount(el,good){
+  const t=$('textarea',el),c=$('.du-cnt',el),MAX=80;let was='';
+  const upd=()=>{
+    const n=t.value.length,left=MAX-n;
+    if(!good){c.textContent=`${n}/${MAX}`;return}
+    const st=left<0?'over':n>=MAX*.8?'near':'';
+    c.className='du-cnt'+(st?' du-cnt-'+st:'');
+    c.textContent=st==='over'?tx(`${-left} Zeichen zu viel`,`${-left} ${-left===1?'character':'characters'} too many`):st==='near'?tx(`Noch ${left} Zeichen`,`${left} ${left===1?'character':'characters'} left`):'';
+    if(left<0)t.setAttribute('aria-invalid','true');else t.removeAttribute('aria-invalid');
+    if(st!==was){if(st==='over')announce(tx('Zu lang.','Too long.'));else if(st==='near'&&!was)announce(tx(`Noch ${left} Zeichen.`,`${left} characters left.`));was=st}
+  };
+  t.addEventListener('input',upd);upd();
+}
+
+/* Letzte Wahl merken */
+function duRememberHTML(){return duFrame(tx('Unterkünfte – Suche','Stays – search'),tx('reisen.example/suche','travel.example/search'),`<div class="field"><label for="{p}">${tx('Sortieren nach','Sort by')}</label><select id="{p}">${tx(['Empfohlen','Preis aufsteigend','Bewertung','Entfernung'],['Recommended','Price: low to high','Rating','Distance']).map(o=>`<option>${o}</option>`).join('')}</select></div><ul class="du-res-l"></ul>`)}
+function duRemember(el,good){
+  const s=$('select',el),l=$('.du-res-l',el);let saved=0;
+  const data=tx(['Hütte am See','Stadtapartment','Bauernhof'],['Lakeside cabin','City apartment','Farm stay']).map((n,k)=>({n,p:[89,64,72][k],r:[4.8,4.5,4.9][k],d:[12,2,25][k]}));
+  const eur=new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  const draw=()=>{const k=s.selectedIndex,a=[...data];if(k===1)a.sort((x,y)=>x.p-y.p);if(k===2)a.sort((x,y)=>y.r-x.r);if(k===3)a.sort((x,y)=>x.d-y.d);
+    l.innerHTML=a.map(x=>`<li><span>${x.n}</span><span class="du-code">${eur.format(x.p)} · ★ ${x.r.toLocaleString(LOCALE)} · ${x.d} km</span></li>`).join('')};
+  s.addEventListener('change',()=>{if(good)saved=s.selectedIndex;draw()});
+  duReload(el,()=>{s.selectedIndex=good?saved:0;draw()});
+  draw();
+}
+
+/* Strg+Enter sendet */
+function duCtrlEnterHTML(good){return `<form class="du-stack"><div class="field"><label for="{p}">${tx('Kommentar','Comment')}</label><textarea class="input du-ta" id="{p}" rows="3"${good?' aria-describedby="{p}-h"':''}></textarea>${good?`<p class="hint" id="{p}-h"><kbd>${duMod()}</kbd> + <kbd>Enter</kbd> ${tx('zum Senden','to send')}</p>`:''}</div><div><button class="btn btn-primary du-sm">${tx('Senden','Send')}</button></div><ul class="du-q"></ul></form>`}
+function duCtrlEnter(el,good){
+  const f=$('form',el),t=$('textarea',el),q=$('.du-q',el);
+  const send=()=>{const v=t.value.trim();if(!v)return;const li=document.createElement('li');li.innerHTML='<span class="du-pre"></span>';$('span',li).textContent=v;q.append(li);t.value='';announce(tx('Gesendet.','Sent.'))};
+  f.addEventListener('submit',e=>{e.preventDefault();send()});
+  t.addEventListener('keydown',e=>{
+    if(e.key!=='Enter'||e.isComposing)return;
+    if(good){if(e.ctrlKey||e.metaKey){e.preventDefault();send()}}
+    else if(!e.shiftKey){e.preventDefault();send()}
+  });
+}
+
+/* Scrollposition erhalten */
+function duScrollHTML(){return `<div class="du-scr" role="region" tabindex="-1" aria-label="${tx('Bestellungen','Orders')}"></div>`}
+function duScroll(el,good){
+  const box=$('.du-scr',el);let pos=0,last=null;
+  const list=()=>{box.innerHTML=`<ul class="du-ord">${Array.from({length:30},(_,k)=>`<li><button type="button" data-o="${1030-k}">${tx('Bestellung','Order')} #${1030-k}</button><span class="du-code">${new Intl.DateTimeFormat(LOCALE,{day:'numeric',month:'short'}).format(new Date(2026,9,30-k))}</span></li>`).join('')}</ul>`};
+  box.addEventListener('click',e=>{
+    const o=e.target.closest('[data-o]');
+    if(o){pos=box.scrollTop;last=o.dataset.o;box.innerHTML=`<div class="du-ord-d"><button type="button" class="btn btn-ghost du-sm du-back">${ic('back')} ${tx('Zurück zur Liste','Back to list')}</button><p class="du-lead">${tx('Bestellung','Order')} #${last}</p><p class="hint">${tx('2 Artikel · geliefert','2 items · delivered')}</p></div>`;box.scrollTop=0;$('.du-back',box).focus({preventScroll:true});return}
+    if(e.target.closest('.du-back')){list();
+      if(good){box.scrollTop=pos;$(`[data-o="${last}"]`,box).focus({preventScroll:true})}
+      else{box.scrollTop=0;box.focus({preventScroll:true})}}
+  });
+  list();
+}
+
+/* Zustand in der URL */
+function duUrlHTML(){return duFrame(tx('Aufgaben','Tasks'),'',`<div class="du-split"><div class="du-seg" role="group" aria-label="Status">${tx(['Alle','Offen','Erledigt'],['All','Open','Done']).map((n,k)=>`<button type="button" data-f="${k}" aria-pressed="false">${n}</button>`).join('')}</div><select aria-label="${tx('Sortierung','Sorting')}">${tx(['Neueste zuerst','Nach Fälligkeit'],['Newest first','By due date']).map(o=>`<option>${o}</option>`).join('')}</select></div><ul class="du-tasks"></ul><div class="btn-row"><button type="button" class="btn btn-ghost du-sm du-share">${ic('link')} ${tx('Link teilen','Share link')}</button></div><p class="du-out" role="status"></p>`)}
+function duUrl(el,good){
+  const addr=$('.du-br-addr',el),sel=$('select',el),ul=$('.du-tasks',el),out=$('.du-out',el);
+  const BASE=tx('aufgaben.example/liste','tasks.example/list'),F=tx(['alle','offen','erledigt'],['all','open','done']),S=tx(['neu','faellig'],['new','due']);
+  const tasks=tx(['Steuererklärung abgeben','Zahnarzt anrufen','Fahrrad zum Service','Geburtstagsgeschenk für Oma','Wohnung kündigen'],['File tax return','Call the dentist','Take bike to service','Birthday present for grandma','Give notice on the flat']).map((n,k)=>({n,done:[false,false,true,false,true][k],due:[3,1,5,7,2][k]}));
+  let st={f:0,s:0},saved={f:0,s:0};
+  const url=()=>BASE+(good&&(st.f||st.s)?'?'+[st.f?`status=${F[st.f]}`:'',st.s?`sort=${S[st.s]}`:''].filter(Boolean).join('&'):'');
+  const draw=()=>{
+    $$('[data-f]',el).forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.f===st.f)));sel.selectedIndex=st.s;
+    let a=tasks.filter(t=>st.f===0||(st.f===1?!t.done:t.done));a=st.s?[...a].sort((x,y)=>x.due-y.due):[...a].reverse();
+    ul.innerHTML=a.map(t=>`<li class="${t.done?'du-done':''}"><span>${t.n}</span><span class="du-code">${tx(`in ${t.due} T.`,`in ${t.due} d`)}</span></li>`).join('');
+    addr.textContent=url();if(good)saved={...st};
+  };
+  el.addEventListener('click',e=>{
+    const b=e.target.closest('[data-f]');if(b){st.f=+b.dataset.f;draw();return}
+    if(e.target.closest('.du-share')){navigator.clipboard?.writeText('https://'+url()).catch(()=>{});out.textContent=tx(`Link kopiert: ${url()}`,`Link copied: ${url()}`)}
+  });
+  sel.addEventListener('change',()=>{st.s=sel.selectedIndex;draw()});
+  duReload(el,()=>{st=good?{...saved}:{f:0,s:0};out.textContent='';draw()});
+  draw();
+}
+
+/* Fokus nach dem Löschen */
+function duFocusDelHTML(){return `<div class="du-stack"><ul class="du-rows"></ul><p class="hint du-fo" aria-hidden="true"></p></div>`}
+function duFocusDel(el,good){
+  const orig=tx(['Paket wurde zugestellt','Neuer Kommentar von Lena','Rechnung März ist da','Termin morgen um 9 Uhr','Passwort wurde geändert'],['Package delivered','New comment from Lena','March invoice is here','Appointment tomorrow at 9','Password was changed']);
+  const ul=$('ul',el),fo=$('.du-fo',el);let items=[...orig];
+  const draw=()=>{ul.innerHTML=items.length?items.map((n,i)=>`<li><span>${n}</span><button type="button" class="btn btn-ghost du-sm" data-i="${i}" aria-label="${tx(`„${n}“ löschen`,`Delete “${n}”`)}">${ic('trash')}</button></li>`).join('')
+    :`<li><span class="hint du-none" tabindex="-1">${tx('Keine Benachrichtigungen mehr.','No more notifications.')}</span><button type="button" class="linkbtn" data-reset>${tx('Alle wieder da','Bring them all back')}</button></li>`};
+  const where=()=>setTimeout(()=>{if(!el.isConnected)return;const a=document.activeElement;
+    fo.textContent=tx('Fokus liegt auf: ','Focus is on: ')+(a&&el.contains(a)?(a.getAttribute('aria-label')||a.textContent.trim()):(!a||a===document.body)?tx('nichts – Tab beginnt wieder oben auf der Seite','nothing – Tab starts over at the top of the page'):tx('etwas anderem','something else'))},0);
+  ul.addEventListener('click',e=>{
+    const d=e.target.closest('[data-i]');
+    if(d){const i=+d.dataset.i;items.splice(i,1);draw();
+      if(good){const bs=$$('[data-i]',ul);(bs[Math.min(i,bs.length-1)]||$('.du-none',ul)).focus()}
+      where();return}
+    if(e.target.closest('[data-reset]')){items=[...orig];draw();$('[data-i]',ul).focus();where()}
+  });
+  el.addEventListener('focusin',where);
+  draw();fo.textContent=tx('Fokus liegt auf: –','Focus is on: –');
+}
+
+/* Neue Beiträge als Hinweis */
+function duFeedHTML(){return `<div class="du-stack"><div class="du-pill-slot" role="status"></div><ul class="du-feed-l"></ul><button type="button" class="linkbtn du-replay">${tx('Nochmal','Replay')}</button></div>`}
+function duFeed(el,good){
+  const ul=$('.du-feed-l',el),slot=$('.du-pill-slot',el);let pending=[],ts=[];
+  const INIT=tx([['Mia','Gipfel geschafft!'],['Paul','Wer kommt am Samstag mit?'],['Sara','Neue Fotos vom Grundlsee'],['Tom','Regen am Nachmittag – Plan B?']],[['Mia','Made it to the summit!'],['Paul','Who’s coming along on Saturday?'],['Sara','New photos from Grundlsee'],['Tom','Rain in the afternoon – plan B?']]);
+  const NEW=tx([['Lena','Bin dabei!'],['Jonas','Ich bring Kuchen mit.'],['Eva','Wetter sieht doch gut aus.']],[['Lena','Count me in!'],['Jonas','I’ll bring cake.'],['Eva','The weather looks fine after all.']]);
+  const li=([n,t])=>`<li><b>${n}</b><span>${t}</span><button type="button" class="linkbtn" data-to="${n}">${tx('Antworten','Reply')}</button></li>`;
+  const pill=()=>{slot.innerHTML=pending.length?`<button type="button" class="du-pill">${ic('up')} ${tx(`${pending.length} ${pending.length===1?'neuer Beitrag':'neue Beiträge'}`,`${pending.length} new ${pending.length===1?'post':'posts'}`)}</button>`:''};
+  const play=()=>{ts.forEach(clearTimeout);pending=[];ul.innerHTML=INIT.map(li).join('');pill();
+    ts=NEW.map((p,k)=>duLater(el,()=>{if(good){pending.unshift(p);pill()}else ul.insertAdjacentHTML('afterbegin',li(p))},2000*(k+1)))};
+  el.addEventListener('click',e=>{
+    const r=e.target.closest('[data-to]');if(r){toast({msg:tx(`Antwort an ${r.dataset.to} geöffnet.`,`Reply to ${r.dataset.to} opened.`),duration:2500});return}
+    if(e.target.closest('.du-pill')){ul.insertAdjacentHTML('afterbegin',pending.map(li).join(''));pending=[];pill();const f=$('li',ul);f.tabIndex=-1;f.focus();return}
+    if(e.target.closest('.du-replay'))play();
+  });
+  ul.innerHTML=INIT.map(li).join('');
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){io.disconnect();play()}},{threshold:.5});io.observe(el)}else play();
+}
+
+/* Status im Tab-Titel */
+function duTabHTML(){return duFrame('Mail',tx('mail.example/posteingang','mail.example/inbox'),`<ul class="du-mail"></ul><div class="btn-row"><button type="button" class="btn btn-secondary du-sm du-new">${ic('mail')} ${tx('Neue Mail simulieren','Simulate new email')}</button><button type="button" class="btn btn-ghost du-sm du-save">${tx('Entwurf speichern','Save draft')}</button></div>`)}
+function duTabTitle(el,good){
+  const t=$('.du-br-title',el),fav=$('.du-br-fav',el),ul=$('.du-mail',el);let unread=0,n=0,saving=false;
+  const MAILS=tx([['Lena','Fotos vom Wochenende'],['Bank','Kontoauszug Oktober'],['Jonas','Treffen morgen?'],['Eva','Zugtickets']],[['Lena','Photos from the weekend'],['Bank','October statement'],['Jonas','Meeting tomorrow?'],['Eva','Train tickets']]);
+  const title=()=>{if(!good)return;t.textContent=(saving?tx('Speichert … – ','Saving… – '):'')+(unread?`(${unread}) `:'')+tx('Posteingang – Mail','Inbox – Mail');fav.classList.toggle('du-dot',unread>0)};
+  const row=(m,un)=>`<li class="${un?'du-unread':''}"><button type="button" data-m><b>${m[0]}</b> ${m[1]}</button></li>`;
+  ul.innerHTML=row(tx(['Team','Protokoll vom Montag'],['Team','Monday’s minutes']),false);
+  el.addEventListener('click',e=>{
+    if(e.target.closest('.du-new')){unread++;ul.insertAdjacentHTML('afterbegin',row(MAILS[n++%MAILS.length],true));title();return}
+    if(e.target.closest('.du-save')){saving=true;title();duLater(el,()=>{saving=false;title()},1600);return}
+    const m=e.target.closest('[data-m]');if(m&&m.parentElement.classList.contains('du-unread')){m.parentElement.classList.remove('du-unread');unread--;title()}
+  });
+  title();
+}
+
+/* Bereich auswählen mit Umschalt+Klick */
+function duSelHTML(good){return `<div class="du-fl-h">${good?`<label class="du-choice"><input type="checkbox" class="du-all">${tx('Alle auswählen','Select all')}</label>`:'<span></span>'}<span class="hint du-cnt-sel" role="status"></span></div><ul class="du-fl">${[2041,2042,2043,2044,2045,2046,2047,2048].map((n,k)=>`<li><label class="du-choice"><input type="checkbox">${tx('Foto','Photo')} ${k+1} · IMG_${n}.jpg</label></li>`).join('')}</ul>${good?`<p class="hint">${tx('Tipp: <kbd>Umschalt</kbd> + Klick wählt einen ganzen Bereich.','Tip: <kbd>Shift</kbd> + click selects a whole range.')}</p>`:''}`}
+function duSel(el,good){
+  const cbs=$$('.du-fl input',el),all=$('.du-all',el),cnt=$('.du-cnt-sel',el);let last=null,shift=false;
+  const upd=()=>{const n=cbs.filter(c=>c.checked).length;cnt.textContent=tx(`${n} von ${cbs.length} ausgewählt`,`${n} of ${cbs.length} selected`);if(all){all.checked=n===cbs.length;all.indeterminate=n>0&&n<cbs.length}};
+  el.addEventListener('pointerdown',e=>{shift=e.shiftKey});
+  el.addEventListener('keydown',e=>{shift=e.shiftKey});
+  cbs.forEach((c,k)=>c.addEventListener('change',()=>{
+    if(good&&shift&&last!==null){for(let j=Math.min(last,k);j<=Math.max(last,k);j++)cbs[j].checked=c.checked}
+    last=k;shift=false;upd();
+  }));
+  all?.addEventListener('change',()=>{cbs.forEach(c=>c.checked=all.checked);upd()});
+  upd();
+}
+
+/* Kopiert-Bestätigung am Knopf */
+function duCopyHTML(good){return `<div class="du-copy"><code class="du-copy-v">https://atlas.example/r/7KQ2</code><button type="button" class="btn btn-secondary du-sm du-cpb"><span class="du-cp-ic">${ic('copy')}</span>${good?`<span class="du-swap"><span class="du-l1">${tx('Kopieren','Copy')}</span><span class="du-l2">${tx('Kopiert','Copied')}</span></span>`:tx('Kopieren','Copy')}</button></div>`}
+function duCopy(el,good){
+  const b=$('.du-cpb',el),v=$('.du-copy-v',el).textContent,icn=$('.du-cp-ic',el);let t;
+  b.addEventListener('click',()=>{
+    navigator.clipboard?.writeText(v).catch(()=>{});
+    if(!good)return;
+    clearTimeout(t);b.classList.add('du-copied');icn.innerHTML=ic('check');announce(tx('Link kopiert.','Link copied.'));
+    t=duLater(el,()=>{b.classList.remove('du-copied');icn.innerHTML=ic('copy')},2000);
+  });
+}
+
+/* Relative Zeitangaben */
+function duTimeHTML(){return `<div class="du-stack"><ul class="du-cmts"></ul><div><button type="button" class="btn btn-ghost du-sm du-ff">${tx('Zeit vorspulen: +1 Minute','Fast-forward: +1 minute')}</button></div></div>`}
+function duTime2(el,good){
+  const ul=$('.du-cmts',el),base=Date.now();let skew=0,iv;
+  const C=tx([['Lena','Bin gleich da.'],['Jonas','Habt ihr den Schlüssel?'],['Eva','Danke für gestern!'],['Paul','Fotos sind online.']],[['Lena','Almost there.'],['Jonas','Do you have the key?'],['Eva','Thanks for yesterday!'],['Paul','Photos are online.']]);
+  const AGO=[0,47,26*60+15,9*24*60],ts=AGO.map(m=>base-m*60000);
+  const rtf=new Intl.RelativeTimeFormat(LOCALE,{style:'short'}),hm=new Intl.DateTimeFormat(LOCALE,{hour:'2-digit',minute:'2-digit'}),day=new Intl.DateTimeFormat(LOCALE,{day:'numeric',month:'short'}),full=new Intl.DateTimeFormat(LOCALE,{dateStyle:'full',timeStyle:'short'});
+  const rel=(t,now)=>{const m=Math.floor((now-t)/60000),d0=new Date(now);d0.setHours(0,0,0,0);
+    if(m<1)return tx('gerade eben','just now');if(m<60)return rtf.format(-m,'minute');
+    if(t>=d0.getTime())return rtf.format(-Math.floor(m/60),'hour');
+    if(t>=d0.getTime()-864e5)return tx(`gestern, ${hm.format(t)}`,`yesterday, ${hm.format(t)}`);
+    return day.format(t)};
+  const draw=()=>{const now=Date.now()+skew;
+    ul.innerHTML=C.map(([n,txt],k)=>`<li><span><b>${n}</b> ${txt}</span>${good?`<time datetime="${new Date(ts[k]).toISOString()}" title="${full.format(ts[k])}">${rel(ts[k],now)}</time>`:`<time>${tx(`vor ${AGO[k]} Minuten`,`${AGO[k]} minutes ago`)}</time>`}</li>`).join('')};
+  $('.du-ff',el).addEventListener('click',()=>{skew+=60000;if(good)draw()});
+  if(good)iv=setInterval(()=>{if(!el.isConnected)return clearInterval(iv);draw()},30000);
+  draw();
+}
+
+/* Mehrzahl und Zahlenformat */
+function duPluralHTML(){return `<div class="du-stack"><div class="btn-row"><button type="button" class="btn btn-secondary du-sm" data-d="-1" aria-label="${tx('Eine weniger','One fewer')}">−</button><button type="button" class="btn btn-secondary du-sm" data-d="1" aria-label="${tx('Eine mehr','One more')}">+</button></div><div class="du-pl" role="status"></div></div>`}
+function duPlural(el,good){
+  const box=$('.du-pl',el);let n=1;
+  const pr=new Intl.PluralRules(LOCALE),eur=new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR'});
+  const draw=()=>{const sum=n*617.25;
+    if(good){const msg=n===0?tx('Keine neuen Nachrichten','No new messages'):tx(pr.select(n)==='one'?`${n} neue Nachricht`:`${n} neue Nachrichten`,pr.select(n)==='one'?`${n} new message`:`${n} new messages`);
+      box.innerHTML=`<p><b>${msg}</b></p><p>${tx(`${n===1?'Anhang':'Anhänge'} zusammen: ${eur.format(sum)}`,`${n===1?'Attachment':'Attachments'} total: ${eur.format(sum)}`)}</p>`}
+    else box.innerHTML=`<p><b>${tx(`${n} neue Nachricht(en)`,`${n} new message(s)`)}</b></p><p>${tx(`Anhänge zusammen: ${sum} €`,`Attachments total: ${sum} EUR`)}</p>`};
+  el.addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(b){n=Math.max(0,Math.min(9,n+ +b.dataset.d));draw()}});
+  draw();
+}
+
+/* Bild mit reserviertem Platz */
+function duImgHTML(){return `<div class="du-stack"><div class="du-imgslot"></div><p class="du-measure">${tx('Der Dachstein im Morgenlicht. Der Aufstieg dauert rund vier Stunden.','The Dachstein in morning light. The climb takes about four hours.')}</p><div class="btn-row"><button type="button" class="btn btn-secondary du-sm du-imgbtn">${tx('Tour ansehen','View tour')}</button><button type="button" class="linkbtn du-replay">${tx('Neu laden','Reload')}</button></div></div>`}
+function duImg(el,good){
+  const s=$('.du-imgslot',el),alt=tx('Berglandschaft mit See','Mountain landscape with a lake');let t;
+  if(good)s.classList.add('du-imgslot-good');
+  const play=()=>{clearTimeout(t);
+    s.innerHTML=good?`<div class="du-img du-blur" role="img" aria-label="${alt}"></div>`:'';
+    t=duLater(el,()=>{if(good)$('.du-img',s).classList.remove('du-blur');else s.innerHTML=`<div class="du-img" role="img" aria-label="${alt}"></div>`},1400)};
+  el.addEventListener('click',e=>{if(e.target.closest('.du-replay'))play();if(e.target.closest('.du-imgbtn'))toast({msg:tx('Tour geöffnet.','Tour opened.'),duration:2000})});
+  play();
+}
+
+/* Auffindbare Tastenkürzel */
+function duKeysHTML(good){
+  const k=c=>good?` <kbd>${c}</kbd>`:'';
+  return `${good?`<p class="hint du-app-hint">${tx(`<kbd>?</kbd> zeigt alle Tastenkürzel · <kbd>${duMod()}</kbd> + <kbd>K</kbd> sucht Befehle`,`<kbd>?</kbd> shows all shortcuts · <kbd>${duMod()}</kbd> + <kbd>K</kbd> searches commands`)}</p>`:''}<div class="du-app" tabindex="0" role="region" aria-label="${tx('Beispiel-Mailprogramm','Example email app')}"><div class="du-app-tb"><button type="button" class="btn btn-ghost du-sm" data-cmd="archive">${tx('Archivieren','Archive')}${k('E')}</button><button type="button" class="btn btn-ghost du-sm" data-cmd="star">${tx('Markieren','Star')}${k('S')}</button></div><ul class="du-app-l"></ul><p class="du-app-s hint" role="status"></p><div class="du-ov" hidden></div></div>`;
+}
+function duKeys(el,good){
+  const ORIG=tx([['Lena','Fotos vom Wochenende'],['Bank','Kontoauszug Oktober'],['Jonas','Treffen morgen?'],['Eva','Zugtickets'],['Team','Protokoll vom Montag']],[['Lena','Photos from the weekend'],['Bank','October statement'],['Jonas','Meeting tomorrow?'],['Eva','Train tickets'],['Team','Monday’s minutes']]);
+  const app=$('.du-app',el),ul=$('.du-app-l',el),st=$('.du-app-s',el),ov=$('.du-ov',el),pid=`du-pal-${duDlgN++}`;
+  let mails=ORIG.map(([f,s])=>({f,s,star:false})),sel=0;
+  const CMDS=[['next','J',tx('Nächste Mail','Next email')],['prev','K',tx('Vorige Mail','Previous email')],['archive','E',tx('Archivieren','Archive')],['star','S',tx('Markieren','Star')],['read','',tx('Alle als gelesen markieren','Mark all as read')],['reset','',tx('Posteingang zurücksetzen','Reset inbox')]];
+  const draw=()=>{ul.innerHTML=mails.length?mails.map((m,i)=>`<li class="${i===sel?'on':''}" data-i="${i}">${m.star?'★ ':''}<b>${m.f}</b> ${m.s}</li>`).join(''):`<li>${tx('Posteingang leer.','Inbox empty.')}</li>`};
+  const run=c=>{
+    if(c==='next')sel=Math.min(sel+1,mails.length-1);
+    else if(c==='prev')sel=Math.max(sel-1,0);
+    else if(c==='archive'&&mails.length){const [m]=mails.splice(sel,1);sel=Math.max(0,Math.min(sel,mails.length-1));st.textContent=tx(`„${m.s}“ archiviert.`,`“${m.s}” archived.`)}
+    else if(c==='star'&&mails.length){mails[sel].star=!mails[sel].star;st.textContent=mails[sel].star?tx('Markiert.','Starred.'):tx('Markierung entfernt.','Star removed.')}
+    else if(c==='read')st.textContent=tx('Alle als gelesen markiert.','All marked as read.');
+    else if(c==='reset'){mails=ORIG.map(([f,s])=>({f,s,star:false}));sel=0;st.textContent=tx('Posteingang zurückgesetzt.','Inbox reset.')}
+    draw();
+  };
+  const close=()=>{if(ov.hidden)return;ov.hidden=true;ov.innerHTML='';app.focus()};
+  const help=()=>{ov.hidden=false;
+    ov.innerHTML=`<div class="du-ov-in" role="dialog" aria-label="${tx('Tastenkürzel','Keyboard shortcuts')}"><b>${tx('Tastenkürzel','Keyboard shortcuts')}</b><dl>${CMDS.filter(c=>c[1]).map(c=>`<div><dt><kbd>${c[1]}</kbd></dt><dd>${c[2]}</dd></div>`).join('')}<div><dt><kbd>${duMod()}</kbd>+<kbd>K</kbd></dt><dd>${tx('Befehl suchen','Search commands')}</dd></div><div><dt><kbd>?</kbd></dt><dd>${tx('Diese Übersicht','This overview')}</dd></div></dl><div><button type="button" class="btn btn-secondary du-sm" data-close>${tx('Schließen','Close')}</button></div></div>`;
+    $('[data-close]',ov).focus()};
+  const palette=()=>{ov.hidden=false;let act=0,hits=CMDS;
+    ov.innerHTML=`<div class="du-ov-in" role="dialog" aria-label="${tx('Befehle','Commands')}"><input class="input" role="combobox" aria-expanded="true" aria-controls="${pid}" aria-autocomplete="list" aria-label="${tx('Befehl suchen','Search commands')}" placeholder="${tx('Befehl suchen …','Search commands…')}"><ul class="du-pal" role="listbox" id="${pid}"></ul></div>`;
+    const inp=$('input',ov),list=$('ul',ov);
+    const paint=()=>{list.innerHTML=hits.length?hits.map((c,k)=>`<li role="option" id="${pid}-${k}" data-run="${c[0]}" aria-selected="${k===act}"><span>${c[2]}</span>${c[1]?`<kbd>${c[1]}</kbd>`:''}</li>`).join(''):`<li>${tx('Kein Befehl gefunden.','No command found.')}</li>`;
+      if(hits.length)inp.setAttribute('aria-activedescendant',`${pid}-${act}`);else inp.removeAttribute('aria-activedescendant')};
+    inp.addEventListener('input',()=>{const q=norm(inp.value.trim());hits=CMDS.filter(c=>norm(c[2]).includes(q));act=0;paint()});
+    inp.addEventListener('keydown',e=>{
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(hits.length){act=(act+(e.key==='ArrowDown'?1:-1)+hits.length)%hits.length;paint()}}
+      else if(e.key==='Enter'){e.preventDefault();if(hits[act]){const c=hits[act][0];close();run(c)}}
+    });
+    paint();inp.focus()};
+  app.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&!ov.hidden){e.preventDefault();e.stopPropagation();close();return}
+    if(good&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();e.stopPropagation();palette();return}
+    if(e.target.closest('input')||e.ctrlKey||e.metaKey||e.altKey||!ov.hidden)return;
+    if(good&&e.key==='?'){e.preventDefault();e.stopPropagation();help();return}
+    const c={j:'next',k:'prev',e:'archive',s:'star'}[e.key.toLowerCase()];
+    if(c){e.preventDefault();e.stopPropagation();run(c)}
+  });
+  app.addEventListener('click',e=>{
+    const b=e.target.closest('[data-cmd]');if(b){run(b.dataset.cmd);return}
+    const r=e.target.closest('[data-run]');if(r){close();run(r.dataset.run);return}
+    if(e.target.closest('[data-close]')){close();return}
+    const m=e.target.closest('[data-i]');if(m){sel=+m.dataset.i;draw()}
+  });
+  draw();
+}
+
+/* Namen eintippen bei großem Löschen */
+function duTypeHTML(good){return `<div class="du-dlg du-stack"><p style="margin:0"><b>${tx('Projekt „wanderkarte“ löschen?','Delete project “wanderkarte”?')}</b> ${tx('Alle 1.204 Dateien und der ganze Verlauf sind danach endgültig weg.','All 1,204 files and the entire history will be gone for good.')}</p>${good?`<div class="field"><label for="{p}">${tx('Zum Bestätigen „wanderkarte“ eintippen','Type “wanderkarte” to confirm')}</label><input class="input" id="{p}" autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="{p}-e"><p class="err" id="{p}-e" hidden></p></div>`:''}<div class="btn-row du-end"><button type="button" class="btn btn-secondary du-sm du-no">${tx('Behalten','Keep')}</button><button type="button" class="btn btn-danger du-sm du-yes">${tx('Projekt löschen','Delete project')}</button></div></div><p class="du-out" role="status"></p>`}
+function duTypeConfirm(el,good){
+  const out=$('.du-out',el),i=$('input',el),e=$('.err',el);
+  $('.du-yes',el).addEventListener('click',()=>{
+    if(good&&i.value.trim()!=='wanderkarte'){e.innerHTML=ic('alert')+tx('Tippe genau „wanderkarte“, um zu bestätigen.','Type exactly “wanderkarte” to confirm.');e.hidden=false;i.setAttribute('aria-invalid','true');i.focus();return}
+    if(good){e.hidden=true;i.removeAttribute('aria-invalid');i.value=''}
+    out.textContent=tx('Projekt „wanderkarte“ endgültig gelöscht.','Project “wanderkarte” permanently deleted.');
+  });
+  $('.du-no',el).addEventListener('click',()=>{out.textContent=tx('Behalten – nichts passiert.','Kept – nothing happened.')});
+}
+
 /* Jedes Paar: bad/good sind HTML mit {p} als eindeutigem Präfix, init(el) macht sie lebendig */
 const DUELS=[
 {id:'radio-label',grp:0,topic:tx('Radio-Buttons','Radio buttons'),title:tx('Radio-Button: Der Text gehört zur Klickfläche','Radio button: the text belongs to the click area'),lesson:'forms',
@@ -4012,6 +4651,148 @@ const DUELS=[
  good:`<div class="du-nav"><b>${tx('Firma','Company')}</b><ul class="du-nav-inline">${tx('<li><a href="#">Produkte</a></li><li><a href="#">Preise</a></li><li><a href="#">Kunden</a></li><li><a href="#">Kontakt</a></li>','<li><a href="#">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Customers</a></li><li><a href="#">Contact</a></li>')}</ul></div>`,
  init:{bad(el){const b=$('.du-burger',el),l=$('.du-nav-list',el);b.addEventListener('click',()=>{const open=l.hidden;l.hidden=!open;b.setAttribute('aria-expanded',String(open))})}},
  why:tx('Was man nicht sieht, nutzt man seltener – versteckte Navigation wird deutlich weniger verwendet. Auf breiten Bildschirmen ist Platz für sichtbare Menüpunkte; das Hamburger-Menü ist eine Notlösung für schmale.','What you can’t see gets used less – hidden navigation is used significantly less. Wide screens have room for visible menu items; the hamburger menu is a stopgap for narrow ones.')}
+,
+
+/* Feinschliff */
+{id:'spinner-delay',grp:5,topic:tx('Ladeanzeige','Loading indicator'),title:tx('Spinner erst nach 300 ms – und dann nicht gleich wieder weg','Show the spinner after 300 ms – and don’t whisk it away'),lesson:'loading',
+ try:tx('Klick in beiden nacheinander auf alle drei Antworten und achte auf die Ladeanzeige.','Click all three responses in both, one after another, and watch the loading indicator.'),
+ bad:duSpinHTML(),good:duSpinHTML(),
+ init:{bad(el){duSpinDelay(el,false)},good(el){duSpinDelay(el,true)}},
+ why:tx('Unter etwa 300 ms empfinden Menschen eine Reaktion als sofort. Ein Spinner, der nur kurz aufblitzt, wirkt dann wie ein Flackern und macht die App gefühlt langsamer. Darum: erst nach 300 ms zeigen und, wenn er einmal da ist, mindestens 500 ms stehen lassen. In Angular erledigt das <code>@loading (after 300ms; minimum 500ms)</code> bei <code>@defer</code>.','Below about 300 ms, people perceive a response as instant. A spinner that only flashes briefly looks like flicker and makes the app feel slower. So: show it only after 300 ms and, once it’s there, keep it for at least 500 ms. In Angular, <code>@loading (after 300ms; minimum 500ms)</code> on <code>@defer</code> does exactly that.')},
+{id:'skeleton-shape',grp:5,topic:tx('Kontaktliste','Contact list'),title:tx('Der Platzhalter hat die Form des Inhalts','The placeholder has the shape of the content'),lesson:'loading',
+ try:tx('Klick auf „Neu laden“ und beobachte, ob der Button darunter beim Erscheinen der Kontakte springt.','Click “Reload” and watch whether the button below jumps when the contacts appear.'),
+ bad:duSkelHTML(),good:duSkelHTML(),
+ init:{bad(el){duSkel(el,false)},good(el){duSkel(el,true)}},
+ why:tx('Ein Skeleton in Form des echten Inhalts – Avatar-Kreis, Name, zweite Zeile – zeigt, was gleich kommt, und hält die Höhe: Nichts springt, wenn die Daten da sind. Graue Einheitsbalken sagen nur „irgendwas lädt“ und passen selten zur echten Höhe.','A skeleton shaped like the real content – avatar circle, name, second line – shows what’s coming and keeps the height: nothing jumps when the data arrives. Generic gray bars only say “something is loading” and rarely match the real height.')},
+{id:'prefetch-intent',grp:5,topic:tx('Link zur Detailseite','Link to a detail page'),title:tx('Laden, sobald sich der Klick ankündigt','Start loading as soon as the click announces itself'),lesson:'performance',
+ try:tx('Zeig mit der Maus kurz auf einen Link, warte einen Moment, dann klick. Vergleich die Zeit.','Hover over a link, wait a moment, then click. Compare the time.'),
+ bad:duPrefetchHTML(),good:duPrefetchHTML(),
+ init:{bad(el){duPrefetch(el,false)},good(el){duPrefetch(el,true)}},
+ why:tx('Zwischen Zeigen und Klicken vergehen meist 200–400 ms. Wer schon beim Hover, Fokus oder <code>pointerdown</code> lädt, ist beim Klick oft fertig – die Seite erscheint sofort. Werkzeuge dafür: <code>&lt;link rel="prefetch"&gt;</code>, die Speculation Rules API oder in Angular eine eigene <code>PreloadingStrategy</code>. Nur Leichtes vorladen, nichts, das etwas verändert.','Between pointing and clicking there are usually 200–400 ms. If you start loading on hover, focus or <code>pointerdown</code>, you’re often done by the time the click lands – the page appears instantly. Tools for this: <code>&lt;link rel="prefetch"&gt;</code>, the Speculation Rules API, or a custom <code>PreloadingStrategy</code> in Angular. Only prefetch lightweight things, never anything that changes data.')},
+{id:'hover-intent',grp:5,wide:true,topic:tx('Mega-Menü','Mega menu'),title:tx('Das Untermenü verzeiht den schrägen Weg','The submenu forgives the diagonal path'),lesson:'navigation',
+ try:tx('Zeig auf „Kleidung“ und fahr dann schräg direkt zu „Socken“.','Point at “Clothing”, then move diagonally straight to “Socks”.'),
+ bad:duMegaHTML(),good:duMegaHTML(),
+ init:{bad(el){duMega(el,false)},good(el){duMega(el,true)}},
+ why:tx('Der kürzeste Weg zum Untermenü führt schräg über die Nachbarn. Schaltet das Menü sofort um, ist das Ziel weg, bevor man es erreicht. Gut: kurz abwarten (etwa 300 ms) oder – wie Amazon – prüfen, ob die Maus auf das Untermenü zusteuert („Safe Triangle“). Mit Klick und Tastatur öffnet es natürlich sofort.','The shortest way to the submenu runs diagonally across the neighbors. If the menu switches instantly, the target is gone before you get there. Better: wait briefly (about 300 ms) or – like Amazon – check whether the pointer is heading toward the submenu (“safe triangle”). With a click or the keyboard, of course, it opens immediately.')},
+
+{id:'draft-restore',grp:5,topic:tx('Nachricht schreiben','Writing a message'),title:tx('Entwürfe überleben das Neuladen','Drafts survive a reload'),lesson:'forms',
+ try:tx('Schreib ein paar Wörter und lade dann die Seite neu (Pfeil oben links).','Type a few words, then reload the page (arrow at the top left).'),
+ bad:duDraftHTML(),good:duDraftHTML(),
+ init:{bad(el){duDraft(el,false)},good(el){duDraft(el,true)}},
+ why:tx('Neuladen, Zurück-Taste, ein abgestürzter Tab – und der halbe Text ist weg. Laufend als Entwurf merken (<code>localStorage</code> oder am Server) und beim nächsten Öffnen mit Hinweis wiederherstellen, samt „Verwerfen“. Nach dem Absenden den Entwurf löschen.','Reload, back button, a crashed tab – and half the text is gone. Keep saving it as a draft (<code>localStorage</code> or on the server) and restore it with a notice next time, including “Discard”. Delete the draft once it’s sent.')},
+{id:'leave-warning',grp:5,topic:tx('Formular verlassen','Leaving a form'),title:tx('Warnen beim Verlassen – aber nur, wenn wirklich etwas fehlt','Warn on leaving – but only when something is actually unsaved'),lesson:'dialog',
+ try:tx('Ändere den Titel und klick dann auf „Zur Übersicht“. Probier es auch ohne Änderung.','Change the title, then click “Back to overview”. Try it without a change, too.'),
+ bad:duLeaveHTML(),good:duLeaveHTML(),
+ init:{bad(el){duLeave(el,false)},good(el){duLeave(el,true)}},
+ why:tx('Wer mitten in einer Bearbeitung wegklickt, verliert sonst still seine Arbeit. Nachfragen – aber nur, wenn wirklich etwas ungespeichert ist; wer jedes Mal gefragt wird, klickt blind weiter. Im Browser fängt <code>beforeunload</code> Schließen und Neuladen ab, in Angular ein <code>CanDeactivate</code>-Guard die Navigation innerhalb der App.','If someone clicks away mid-edit, their work is otherwise lost silently. Ask – but only when something is actually unsaved; people who get asked every time click through blindly. In the browser, <code>beforeunload</code> catches closing and reloading; in Angular, a <code>CanDeactivate</code> guard catches navigation within the app.')},
+{id:'session-expiry',grp:5,topic:tx('Abmeldung','Sign-out'),title:tx('Das Sitzungsende kündigt sich an','The end of the session announces itself'),lesson:'errors-offline',
+ try:tx('Klick ins Textfeld und warte zwölf Sekunden – so kurz ist die Sitzung hier.','Click into the text field and wait twelve seconds – that’s how short the session is here.'),
+ bad:duSessHTML(),good:duSessHTML(),
+ init:{bad(el){duSession(el,false)},good(el){duSession(el,true)}},
+ why:tx('Zeitlimits ohne Vorwarnung kosten Arbeit – vor allem Menschen, die langsamer tippen oder Hilfsmittel nutzen. <a href="#wcag-kriterien/2.2.1">WCAG 2.2.1</a> verlangt, dass man ein Zeitlimit verlängern kann, mit Warnung mindestens 20 Sekunden vorher. Und läuft die Sitzung doch ab, bleibt die Eingabe erhalten und ist nach dem Anmelden wieder da.','Time limits without warning cost people their work – especially those who type more slowly or use assistive technology. <a href="#wcag-kriterien/2.2.1">WCAG 2.2.1</a> requires that a time limit can be extended, with a warning at least 20 seconds in advance. And if the session does expire, the input is kept and is back after signing in.')},
+{id:'offline-queue',grp:5,topic:tx('Kommentar ohne Netz','Comment without a connection'),title:tx('Offline wird gewartet, nicht gemeckert','Offline means waiting, not complaining'),lesson:'errors-offline',
+ try:tx('Geh offline, schick den Kommentar ab und geh dann wieder online.','Go offline, send the comment, then go back online.'),
+ bad:duQueueHTML(),good:duQueueHTML(),
+ init:{bad(el){duQueue(el,false)},good(el){duQueue(el,true)}},
+ why:tx('Unterwegs ist „offline“ Alltag: Tunnel, Lift, Funkloch. Statt eines Fehlers kommt die Aktion in eine Warteschlange, sichtbar als „wird gesendet“, und geht automatisch raus, sobald das Netz zurück ist (<code>online</code>-Event, Service Worker mit Background Sync). Der Text bleibt dabei nie auf der Strecke.','On the go, “offline” is everyday life: tunnels, elevators, dead zones. Instead of an error, the action goes into a queue, visibly marked “will be sent”, and goes out automatically once the connection is back (<code>online</code> event, service worker with Background Sync). The text is never lost along the way.')},
+{id:'retry-backoff',grp:5,topic:tx('Serverfehler','Server error'),title:tx('Erst selbst nochmal versuchen, dann ehrlich fragen','Retry on your own first, then ask honestly'),lesson:'errors-offline',
+ try:tx('Klick in beiden auf „Kontoauszüge laden“ – der Server hat gerade Schluckauf.','Click “Load statements” in both – the server is having hiccups.'),
+ bad:duRetryHTML(),good:duRetryHTML(),
+ init:{bad(el){duRetry(el,false)},good(el){duRetry(el,true)}},
+ why:tx('Viele Fehler sind vorübergehend. Erst ein paar automatische Versuche mit wachsender Pause (Exponential Backoff, mit etwas Zufall gegen Lastspitzen), dabei sagen, was passiert – und erst danach ein klarer „Erneut versuchen“-Knopf. Ein roher Fehlercode ist eine Sackgasse. Automatisch wiederholen nur, was man gefahrlos wiederholen kann: Lesen ja, Bezahlen nur mit Idempotency Key.','Many errors are temporary. First a few automatic attempts with growing pauses (exponential backoff, with some randomness against load spikes), saying what’s happening – and only then a clear “Try again” button. A raw error code is a dead end. Only retry automatically what’s safe to repeat: reading yes, payments only with an idempotency key.')},
+
+{id:'tolerant-input',grp:5,topic:tx('Telefonnummer','Phone number'),title:tx('Eingaben so annehmen, wie Menschen sie schreiben','Accept input the way people write it'),lesson:'forms',
+ try:tx('Klick auf „Weiter“ – die Nummer steht schon so drin, wie man sie schreibt.','Click “Continue” – the number is already filled in the way people write it.'),
+ bad:duTolHTML(),good:duTolHTML(),
+ init:{bad(el){duTolerant(el,false)},good(el){duTolerant(el,true)}},
+ why:tx('Menschen schreiben Nummern so, wie sie sie kennen: mit Leerzeichen, Bindestrichen, Klammern. Aufräumen ist Aufgabe der Software: Leerzeichen am Rand weg, Trennzeichen raus, bei Beträgen Komma und Punkt verstehen. Tolerant beim Annehmen, streng beim Speichern – und beim Anzeigen wieder lesbar gruppieren.','People write numbers the way they know them: with spaces, dashes, parentheses. Cleaning up is the software’s job: trim the edges, strip separators, understand both comma and period in amounts. Be tolerant when accepting, strict when storing – and group it readably again when displaying.')},
+{id:'inputmode',grp:5,topic:tx('Handy-Tastatur','Phone keyboard'),title:tx('Jedes Feld holt die passende Tastatur','Every field brings up the right keyboard'),lesson:'forms',
+ try:tx('Klick nacheinander in die vier Felder und schau, welche Tastatur ein Handy zeigen würde.','Click into the four fields one by one and see which keyboard a phone would show.'),
+ bad:duKbHTML(false),good:duKbHTML(true),
+ init:{bad(el){duKb(el)},good(el){duKb(el)}},
+ why:tx('Am Handy entscheiden <code>type</code> und <code>inputmode</code>, welche Tastatur erscheint: Ziffernblock für die PLZ (<code>inputmode="numeric"</code>), mit Komma für Beträge (<code>decimal</code>), mit @ für E-Mail (<code>type="email"</code>), Telefontastatur für Nummern (<code>type="tel"</code>). Ein Attribut, und niemand muss mehr auf die Zahlenebene umschalten. Dazu das passende <code>autocomplete</code>, dann füllt der Browser sogar aus.','On a phone, <code>type</code> and <code>inputmode</code> decide which keyboard appears: a number pad for ZIP codes (<code>inputmode="numeric"</code>), with a decimal point for amounts (<code>decimal</code>), with @ for email (<code>type="email"</code>), a phone pad for numbers (<code>type="tel"</code>). One attribute, and nobody has to switch to the numbers layer again. Add the matching <code>autocomplete</code> and the browser even fills it in.')},
+{id:'otp-paste',grp:5,topic:tx('Bestätigungscode','Verification code'),title:tx('Ein eingefügter Code landet in allen Kästchen','A pasted code lands in every box'),lesson:'forms',
+ try:tx('Kopier den Code und füg ihn ins erste Kästchen ein (Strg+V).','Copy the code and paste it into the first box (Ctrl+V).'),
+ bad:duOtpHTML(false),good:duOtpHTML(true),
+ init:{bad(el){duOtp(el,false)},good(el){duOtp(el,true)}},
+ why:tx('Einmalcodes werden fast immer eingefügt oder vom Handy ausgefüllt. Sechs Felder mit <code>maxlength="1"</code> schneiden das auf die erste Ziffer ab. Gut: Einfügen auf alle Kästchen verteilen, beim Tippen weiterspringen, mit der Rücktaste zurück – und <code>autocomplete="one-time-code"</code>, damit iOS und Android den Code aus der SMS direkt anbieten. Noch robuster: ein einziges Feld, das nur wie sechs aussieht.','One-time codes are almost always pasted or filled in by the phone. Six fields with <code>maxlength="1"</code> cut that down to the first digit. Better: spread a paste across all boxes, advance while typing, go back with Backspace – and <code>autocomplete="one-time-code"</code> so iOS and Android offer the code from the text message directly. Even more robust: a single field that just looks like six.')},
+{id:'char-counter',grp:5,topic:tx('Zeichenlimit','Character limit'),title:tx('Der Zähler meldet sich erst kurz vor dem Limit','The counter speaks up only near the limit'),lesson:'forms',
+ try:tx('Schreib weiter, bis das Limit von 80 Zeichen erreicht ist – und noch ein bisschen darüber.','Keep typing until you reach the 80-character limit – and a little beyond.'),
+ bad:duCountHTML(false),good:duCountHTML(true),
+ init:{bad(el){duCount(el,false)},good(el){duCount(el,true)}},
+ why:tx('Ein Zähler, der von Anfang an „0/80“ zeigt, ist Lärm – bei den meisten Eingaben spielt das Limit nie eine Rolle. Erst ab etwa 80 % einblenden. Und nicht hart abschneiden: Wer Text einfügt, verliert sonst still das Ende. Besser darüber tippen lassen, deutlich „3 Zeichen zu viel“ zeigen und erst beim Absenden blockieren.','A counter showing “0/80” from the start is noise – for most input, the limit never matters. Show it only from about 80%. And don’t cut off hard: anyone pasting text silently loses the end. Better to let people type past it, clearly show “3 characters too many” and only block on submit.')},
+{id:'remember-choice',grp:5,topic:tx('Sortierung','Sorting'),title:tx('Die letzte Wahl wird zur Vorgabe','The last choice becomes the default'),lesson:'search-filter',
+ try:tx('Stell die Sortierung um und lade die Seite neu (Pfeil oben links).','Change the sorting, then reload the page (arrow at the top left).'),
+ bad:duRememberHTML(),good:duRememberHTML(),
+ init:{bad(el){duRemember(el,false)},good(el){duRemember(el,true)}},
+ why:tx('Wer einmal „Preis aufsteigend“ gewählt hat, will das beim nächsten Mal wieder. Vorlieben wie Sortierung, Ansicht, Land oder Zahlungsart merken spart bei jedem Besuch Klicks. Nur Vorlieben merken, keine einmaligen Entscheidungen – und immer sichtbar lassen, was gerade gilt.','Anyone who picked “Price: low to high” once wants it again next time. Remembering preferences like sorting, view, country or payment method saves clicks on every visit. Only remember preferences, not one-off decisions – and always keep visible what currently applies.')},
+{id:'ctrl-enter',grp:5,topic:tx('Kommentarfeld','Comment field'),title:tx('Enter macht eine Zeile, Strg+Enter sendet','Enter adds a line, Ctrl+Enter sends'),lesson:'forms',
+ try:tx('Schreib zwei Zeilen: erste Zeile, Enter, zweite Zeile. Dann absenden.','Write two lines: first line, Enter, second line. Then send.'),
+ bad:duCtrlEnterHTML(false),good:duCtrlEnterHTML(true),
+ init:{bad(el){duCtrlEnter(el,false)},good(el){duCtrlEnter(el,true)}},
+ why:tx('In einem mehrzeiligen Feld erwartet man bei Enter eine neue Zeile. Wer schon bei Enter sendet, verschickt halbe Nachrichten. Gut: Enter macht eine Zeile, <kbd>Strg</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> sendet, und ein kleiner Hinweis verrät das Kürzel. Chats mit kurzen Nachrichten dürfen Enter zum Senden nehmen – dann aber mit Umschalt+Enter für die neue Zeile.','In a multi-line field, people expect Enter to add a new line. Sending on Enter ships half-finished messages. Better: Enter adds a line, <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> sends, and a small hint reveals the shortcut. Chats with short messages may use Enter to send – but then with Shift+Enter for a new line.')},
+
+{id:'scroll-restore',grp:5,topic:tx('Lange Liste','Long list'),title:tx('Zurück heißt: genau dort weiter','Back means: right where you left off'),lesson:'master-detail',
+ try:tx('Scroll weit runter, öffne eine Bestellung und geh zurück.','Scroll far down, open an order and go back.'),
+ bad:duScrollHTML(),good:duScrollHTML(),
+ init:{bad(el){duScroll(el,false)},good(el){duScroll(el,true)}},
+ why:tx('Wer weit nach unten scrollt, etwas öffnet und zurückgeht, will genau dort weitermachen. Landet man wieder oben, beginnt die Suche von vorn. Scrollposition merken, wiederherstellen und den Fokus auf das zuletzt geöffnete Element setzen. Angular: <code>withInMemoryScrolling({scrollPositionRestoration: \'enabled\'})</code>; Master-Detail nebeneinander umgeht das Problem ganz.','Anyone who scrolls far down, opens something and goes back wants to continue right there. Landing at the top again means starting the search over. Remember the scroll position, restore it, and put focus on the item opened last. Angular: <code>withInMemoryScrolling({scrollPositionRestoration: \'enabled\'})</code>; a side-by-side master-detail layout avoids the problem altogether.')},
+{id:'url-state',grp:5,topic:tx('Filter und Sortierung','Filters and sorting'),title:tx('Der Zustand steht in der Adresse','The state lives in the URL'),lesson:'deep-linking',
+ try:tx('Filter auf „Offen“, sortier nach Fälligkeit, schau in die Adresszeile und lade dann neu.','Filter to “Open”, sort by due date, look at the address bar, then reload.'),
+ bad:duUrlHTML(),good:duUrlHTML(),
+ init:{bad(el){duUrl(el,false)},good(el){duUrl(el,true)}},
+ why:tx('Steht der Zustand in der URL, funktionieren Neuladen, Zurück-Taste, Lesezeichen und Teilen von selbst. Filter, Sortierung, Suchbegriff, Tab und Seite gehören in die Query (<code>?status=offen&amp;sort=faellig</code>). Sonst schickt man jemandem einen Link, und der sieht etwas ganz anderes. Angular: <code>queryParams</code> im Router, mit <code>withComponentInputBinding()</code> direkt als Input.','When the state lives in the URL, reload, back button, bookmarks and sharing just work. Filters, sorting, search term, tab and page belong in the query (<code>?status=open&amp;sort=due</code>). Otherwise you send someone a link and they see something completely different. Angular: <code>queryParams</code> in the router, with <code>withComponentInputBinding()</code> straight into an input.')},
+{id:'focus-after-delete',grp:5,topic:tx('Benachrichtigungen löschen','Deleting notifications'),title:tx('Nach dem Löschen bleibt der Fokus in der Liste','After deleting, focus stays in the list'),lesson:'focus',
+ try:tx('Lösch mit der Tastatur: Tab zum ersten Mülleimer, Enter – und gleich nochmal Enter.','Delete with the keyboard: Tab to the first trash can, Enter – and Enter again right away.'),
+ bad:duFocusDelHTML(),good:duFocusDelHTML(),
+ init:{bad(el){duFocusDel(el,false)},good(el){duFocusDel(el,true)}},
+ why:tx('Verschwindet das fokussierte Element, fällt der Fokus an den Seitenanfang – mit Tastatur oder Screenreader arbeitet man sich dann von oben wieder hin. Den Fokus bewusst setzen: aufs nächste Element, beim letzten aufs vorige, bei leerer Liste auf die Leer-Meldung. Dasselbe gilt nach dem Schließen von Dialogen.','When the focused element disappears, focus falls back to the top of the page – with a keyboard or screen reader, you then have to work your way back down. Set focus deliberately: on the next item, on the previous one for the last item, on the empty message for an empty list. The same applies after closing dialogs.')},
+{id:'new-items-pill',grp:5,topic:tx('Live-Feed','Live feed'),title:tx('Neue Beiträge melden sich, statt zu schieben','New posts announce themselves instead of pushing'),lesson:'performance',
+ try:tx('Warte ein paar Sekunden und versuch dann, bei „Mia“ auf „Antworten“ zu klicken.','Wait a few seconds, then try to click “Reply” on “Mia”.'),
+ bad:duFeedHTML(),good:duFeedHTML(),
+ init:{bad(el){duFeed(el,false)},good(el){duFeed(el,true)}},
+ why:tx('Neue Einträge, die oben einfach dazukommen, schieben alles nach unten – mitten im Lesen oder genau beim Klick, der dann den falschen Beitrag trifft. Besser ein Hinweis „2 neue Beiträge“; die Liste ändert sich erst, wenn man ihn antippt. So bleibt die Kontrolle beim Menschen.','New entries simply added at the top push everything down – mid-read or right during a click, which then hits the wrong post. Better a hint saying “2 new posts”; the list changes only once you tap it. That keeps people in control.')},
+{id:'tab-title',grp:5,topic:tx('Browser-Tab','Browser tab'),title:tx('Der Tab-Titel zeigt, was wartet','The tab title shows what’s waiting'),lesson:'navigation',
+ try:tx('Lass zwei Mails eintreffen, speichere einen Entwurf und schau dabei nur auf den Tab oben.','Let two emails arrive, save a draft and watch only the tab at the top.'),
+ bad:duTabHTML(),good:duTabHTML(),
+ init:{bad(el){duTabTitle(el,false)},good(el){duTabTitle(el,true)}},
+ why:tx('Der Tab-Titel ist oft das Einzige, was man von einer App im Hintergrund sieht. Ungelesene Anzahl oder „Speichert …“ dort anzeigen, dazu ein Punkt im Favicon – so merkt man ohne Umschalten, dass etwas wartet. Das Wichtigste nach vorn: „(3) Posteingang – Mail“, denn lange Titel werden hinten abgeschnitten. Nicht blinken lassen.','The tab title is often all you see of an app in the background. Show the unread count or “Saving…” there, plus a dot on the favicon – then people notice something is waiting without switching. Put what matters first: “(3) Inbox – Mail”, because long titles get cut off at the end. No blinking.')},
+{id:'shift-select',grp:5,topic:tx('Mehrfachauswahl','Multi-select'),title:tx('Umschalt+Klick wählt einen ganzen Bereich','Shift+click selects a whole range'),lesson:'tables',
+ try:tx('Wähl die Fotos 2 bis 7 aus.','Select photos 2 to 7.'),
+ bad:duSelHTML(false),good:duSelHTML(true),
+ init:{bad(el){duSel(el,false)},good(el){duSel(el,true)}},
+ why:tx('Wer viele Einträge auswählen muss, will nicht jeden einzeln anklicken. Umschalt+Klick wählt alles zwischen zwei Klicks, eine Kopf-Checkbox alles auf einmal – mit Zwischenzustand und Zähler. So kennt man es aus Dateimanager und Mailprogramm, also erwarten es Menschen auch im Web. Ein kurzer Hinweis macht das Kürzel entdeckbar.','Anyone who needs to select many items doesn’t want to click each one. Shift+click selects everything between two clicks, a header checkbox selects all at once – with an indeterminate state and a counter. People know this from file managers and email clients, so they expect it on the web, too. A short hint makes the shortcut discoverable.')},
+
+{id:'copied-feedback',grp:5,topic:tx('Link kopieren','Copy link'),title:tx('„Kopiert ✓“ direkt am Knopf','“Copied ✓” right on the button'),lesson:'toast',
+ try:tx('Klick in beiden auf „Kopieren“.','Click “Copy” in both.'),
+ bad:duCopyHTML(false),good:duCopyHTML(true),
+ init:{bad(el){duCopy(el,false)},good(el){duCopy(el,true)}},
+ why:tx('Kopieren passiert unsichtbar – ohne Rückmeldung klickt man sicherheitshalber dreimal oder fügt zur Probe irgendwo ein. Die Bestätigung gehört direkt an den Knopf: Symbol wird zum Haken, „Kopiert“, nach zwei Sekunden zurück. Ohne springende Breite und mit einer kurzen Ansage für Screenreader.','Copying happens invisibly – without feedback, people click three times to be safe or paste somewhere to check. The confirmation belongs right on the button: the icon turns into a check mark, “Copied”, and back after two seconds. Without a jumping width, and with a short announcement for screen readers.')},
+{id:'relative-time',grp:5,topic:tx('Zeitangaben','Timestamps'),title:tx('Zeitangaben, die mitlaufen','Timestamps that keep up'),lesson:'i18n',
+ try:tx('Spul in beiden ein paar Minuten vor und zeig mit der Maus auf eine Zeitangabe.','Fast-forward a few minutes in both and hover over a timestamp.'),
+ bad:duTimeHTML(),good:duTimeHTML(),
+ init:{bad(el){duTime2(el,false)},good(el){duTime2(el,true)}},
+ why:tx('„Vor 1575 Minuten“ muss man erst umrechnen, und „vor 0 Minuten“, das nie weiterzählt, stimmt nach einer Weile nicht mehr. Gut: kurz und menschlich – „gerade eben“, „vor 5 Min.“, „gestern, 14:03“, ab einer Woche das Datum –, laufend aktualisiert und mit genauer Zeit im Tooltip (<code>&lt;time datetime&gt;</code> plus <code>title</code>). <code>Intl.RelativeTimeFormat</code> übersetzt das in jede Sprache.','“1575 minutes ago” needs mental math, and a “0 minutes ago” that never counts up is wrong after a while. Better: short and human – “just now”, “5 min. ago”, “yesterday, 2:03 PM”, the date after a week – kept up to date, with the exact time in a tooltip (<code>&lt;time datetime&gt;</code> plus <code>title</code>). <code>Intl.RelativeTimeFormat</code> translates it into any language.')},
+{id:'plural-locale',grp:5,topic:tx('Zahlen und Mehrzahl','Numbers and plurals'),title:tx('„1 Nachricht“, nicht „1 Nachricht(en)“','“1 message”, not “1 message(s)”'),lesson:'i18n',
+ try:tx('Zähl mit + und − zwischen 0 und 3.','Count between 0 and 3 with + and −.'),
+ bad:duPluralHTML(),good:duPluralHTML(),
+ init:{bad(el){duPlural(el,false)},good(el){duPlural(el,true)}},
+ why:tx('„1 Nachricht(en)“ und „1234.5 €“ verraten sofort, dass hier nur zusammengesteckt wurde. <code>Intl.PluralRules</code> wählt die richtige Form – manche Sprachen haben sechs –, <code>Intl.NumberFormat</code> setzt Tausendertrennung, Dezimalzeichen, zwei Nachkommastellen und das Währungszeichen an die richtige Stelle. Für die Null lohnt ein eigener Satz: „Keine neuen Nachrichten“.','“1 message(s)” and “1234.5 €” instantly reveal that things were just stitched together. <code>Intl.PluralRules</code> picks the right form – some languages have six –, <code>Intl.NumberFormat</code> puts in thousands separators, the decimal mark, two decimal places and the currency symbol in the right spot. Zero deserves its own sentence: “No new messages”.')},
+{id:'image-placeholder',grp:5,topic:tx('Bild im Artikel','Image in an article'),title:tx('Bilder reservieren ihren Platz','Images reserve their space'),lesson:'performance',
+ try:tx('Klick auf „Neu laden“ und behalte den Button „Tour ansehen“ im Auge.','Click “Reload” and keep an eye on the “View tour” button.'),
+ bad:duImgHTML(),good:duImgHTML(),
+ init:{bad(el){duImg(el,false)},good(el){duImg(el,true)}},
+ why:tx('Ein Bild ohne reservierten Platz schiebt beim Laden alles darunter weg – der Klick landet daneben. <code>width</code> und <code>height</code> oder <code>aspect-ratio</code> reservieren den Platz vorab, ein winziger unscharfer Platzhalter (LQIP, BlurHash) zeigt schon Farben und Form, bis das echte Bild da ist. Angular: <code>NgOptimizedImage</code> mit <code>placeholder</code>.','An image without reserved space pushes everything below it away while loading – the click lands elsewhere. <code>width</code> and <code>height</code> or <code>aspect-ratio</code> reserve the space up front, and a tiny blurred placeholder (LQIP, BlurHash) already shows colors and shape until the real image arrives. Angular: <code>NgOptimizedImage</code> with <code>placeholder</code>.')},
+{id:'shortcuts',grp:5,wide:true,topic:tx('Tastenkürzel','Keyboard shortcuts'),title:tx('Tastenkürzel, die man finden kann','Keyboard shortcuts you can discover'),lesson:'focus',
+ try:tx('Klick in die Mail-Liste und arbeite nur mit der Tastatur: J und K blättern, E archiviert. Gibt es noch mehr?','Click into the email list and use only the keyboard: J and K move, E archives. Is there more?'),
+ bad:duKeysHTML(false),good:duKeysHTML(true),
+ init:{bad(el){duKeys(el,false)},good(el){duKeys(el,true)}},
+ why:tx('Kürzel machen Vielnutzer schnell – aber nur, wenn man sie findet. Ein dezenter Hinweis, <kbd>?</kbd> für die Übersicht und Kürzel direkt an den Knöpfen machen sie entdeckbar; eine Befehlspalette mit <kbd>Strg</kbd>+<kbd>K</kbd> findet jede Aktion per Suche. Einzelne Buchstaben nur, solange der Fokus in der App und nicht in einem Textfeld liegt – und abschaltbar, sonst kollidieren sie mit Screenreadern (<a href="#wcag-kriterien/2.1.4">WCAG 2.1.4</a>).','Shortcuts make power users fast – but only if they can be found. A subtle hint, <kbd>?</kbd> for an overview and shortcuts shown right on the buttons make them discoverable; a command palette on <kbd>Ctrl</kbd>+<kbd>K</kbd> finds any action by search. Single-letter keys only while focus is in the app and not in a text field – and they must be possible to turn off, or they clash with screen readers (<a href="#wcag-kriterien/2.1.4">WCAG 2.1.4</a>).')},
+{id:'type-to-confirm',grp:5,topic:tx('Projekt löschen','Deleting a project'),title:tx('Bei großem Unumkehrbarem den Namen eintippen lassen','For big irreversible actions, have people type the name'),lesson:'dialog',
+ try:tx('Lösch das Projekt in beiden – oder versuch es zumindest.','Delete the project in both – or at least try.'),
+ bad:duTypeHTML(false),good:duTypeHTML(true),
+ init:{bad(el){duTypeConfirm(el,false)},good(el){duTypeConfirm(el,true)}},
+ why:tx('Bei wirklich Unumkehrbarem mit großer Tragweite – ein ganzes Projekt, ein Konto, eine Produktionsdatenbank – reicht ein Klick nicht, der passiert aus Gewohnheit. Den Namen eintippen zwingt dazu, zu lesen, <i>was</i> gelöscht wird, und schützt vor dem falschen Tab. Nur dafür einsetzen; bei Alltäglichem gilt weiter: <a href="#details/confirm-undo">Rückgängig schlägt Nachfrage</a>.','For truly irreversible actions with big consequences – a whole project, an account, a production database – one click isn’t enough; it happens out of habit. Typing the name forces people to read <i>what</i> is being deleted and protects against the wrong tab. Use it only for that; for everyday actions, this still applies: <a href="#details/confirm-undo">Undo beats confirmation</a>.')}
 ];
 function duChips(el,good){
   const box=$('.du-chips',el);let cities=tx(['Wien','Graz','Linz','Salzburg'],['Vienna','Graz','Linz','Salzburg']);
@@ -4233,7 +5014,7 @@ function duQuizInit(root){
 }
 
 const DUELL_PAGES=[
- {id:'details',title:tx('Detail-Galerie','Detail gallery'),icon:'star',short:tx(`${DUELS.length} UI-Details als Paar: schlecht und gut, beide zum Ausprobieren.`,`${DUELS.length} UI details as pairs: bad and good, both ready to try.`),keys:'gut schlecht vergleich details mikro radio label cursor pointer hover klickfläche passwort pflichtfeld iban tabs karussell accordion hamburger kontrast leerer zustand fehlermeldung linktext good bad comparison micro click area hit area password required field carousel contrast empty state error message link text',render:duGalleryHTML,init:duGalleryInit,
+ {id:'details',title:tx('Detail-Galerie','Detail gallery'),icon:'star',short:tx(`${DUELS.length} UI-Details als Paar: schlecht und gut, beide zum Ausprobieren.`,`${DUELS.length} UI details as pairs: bad and good, both ready to try.`),keys:'gut schlecht vergleich details mikro radio label cursor pointer hover klickfläche passwort pflichtfeld iban tabs karussell accordion hamburger kontrast leerer zustand fehlermeldung linktext feinschliff spinner verzögerung entwurf autosave offline warteschlange otp einmalcode tastenkürzel befehlspalette scrollposition url zustand tab-titel kopiert zeitangabe plural polish delay draft queue one-time code shortcuts command palette scroll position tab title copied relative time good bad comparison micro click area hit area password required field carousel contrast empty state error message link text',render:duGalleryHTML,init:duGalleryInit,
   docTitle:sub=>D_BY[sub]?tx(`${D_BY[sub].title} · Gut & Schlecht`,`${D_BY[sub].title} · Good & Bad`):tx('Gut & Schlecht: UI-Details','Good & Bad: UI details'),focus:(root,sub)=>D_BY[sub]&&$('#du-'+sub+'-h',root)},
  {id:'details-quiz',title:tx('Quiz: Was ist besser?','Quiz: Which is better?'),icon:'check',short:tx('Paare ohne Etikett – erkennst du die gute Variante? Mit Lernstand und „Fehler üben“.','Unlabeled pairs – can you spot the good option? With progress tracking and “Practice mistakes”.'),keys:'quiz raten spiel test gut schlecht lernstand fehler üben serie guess game good bad progress practice mistakes streak',render:duQuizHTML,init:duQuizInit}
 ];

@@ -13,6 +13,16 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Neuer Bereich „Feinschliff“ in Gut & Schlecht mit 27 Paaren: Details, die man leicht
+  übersieht und die eine App erst rund machen – Spinner mit Verzögerung, Skeleton in Form des
+  Inhalts, Vorladen bei Hover, Hover-Intent im Mega-Menü, Entwürfe wiederherstellen, Warnen
+  beim Verlassen, Sitzungsende ankündigen, Offline-Warteschlange, automatisches Wiederholen,
+  tolerante Eingaben, passende Handy-Tastatur, Einmalcode einfügen, Zeichenzähler kurz vor dem
+  Limit, letzte Wahl merken, Strg+Enter zum Senden, Scrollposition beim Zurück, Zustand in der
+  URL, Fokus nach dem Löschen, „neue Beiträge“-Hinweis, Status im Tab-Titel, Umschalt+Klick,
+  „Kopiert ✓“ am Knopf, mitlaufende Zeitangaben, Mehrzahl und Zahlenformat, Bilder mit
+  reserviertem Platz, auffindbare Tastenkürzel und Namen eintippen bei großem Löschen. Filter und
+  Quiz kennen den neuen Bereich.
 - Neuer Name: Aus „Daumenregel“ wird „UI-Atlas“, passend zu CSS-Atlas und HTML-Atlas. Die
   App liegt jetzt unter daniel-hopium.github.io/ui-atlas/; die alte Adresse
   …/pattern-library/ funktioniert nicht mehr. Gespeicherte Einstellungen bleiben erhalten.
