@@ -13,6 +13,8 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Im Kopf steht jetzt das App-Symbol statt des Buchstabens der Marke. Der Markenwechsel
+  tauscht nur noch Name, Farbe, Schrift und Eckenradius.
 - Neuer Bereich „Feinschliff“ in Gut & Schlecht mit 27 Paaren: Details, die man leicht
   übersieht und die eine App erst rund machen – Spinner mit Verzögerung, Skeleton in Form des
   Inhalts, Vorladen bei Hover, Hover-Intent im Mega-Menü, Entwürfe wiederherstellen, Warnen

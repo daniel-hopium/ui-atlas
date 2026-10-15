@@ -96,6 +96,7 @@ kbd{font-family:var(--font-mono);font-size:.8rem;border:1px solid var(--line-str
 .appbar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--line);position:relative}
 .logo{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0;position:relative}
 .logo-mark{width:36px;height:36px;border-radius:var(--radius-mark);background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font:var(--display-wt) 1.15rem/1 var(--font-display);flex:none}
+img.logo-mark{background:none;object-fit:contain}
 .logo-name{font:var(--display-wt) 1.125rem/1.15 var(--font-display);letter-spacing:-.01em;margin:0}
 .logo-sub{display:block;font:400 .75rem/1.3 var(--font-body);color:var(--muted);letter-spacing:.02em}
 .hdr-ctl{display:flex;align-items:center;gap:8px;position:relative}
@@ -1242,7 +1243,7 @@ a.logo:hover{background:var(--surface-2)}
   <a class="skip" href="#hauptinhalt" id="skip" data-en="Skip to content">Zum Inhalt springen</a>
   <header class="appbar" data-anno="App Bar (header)">
     <a class="logo" href="#start" data-anno="Logo-Slot (Link zum Start)" data-en-anno="Logo slot (link to start)">
-      <span class="logo-mark" id="logo-mark" aria-hidden="true">F</span>
+      <img class="logo-mark" id="logo-mark" src="favicon.svg" alt="" width="36" height="36">
       <span class="logo-name"><span id="app-name">Fjord Kompass</span><span class="logo-sub" data-en="UI rules you can touch">UI-Regeln zum Anfassen</span></span><span class="sr-only" data-en=", start page">, Startseite</span>
     </a>
     <div class="hdr-ctl" data-anno="Select">
@@ -2249,7 +2250,7 @@ const LESSONS=[
   do:tx([`Kundenfarben automatisch auf Kontrast prüfen, bevor sie live gehen.`,`Nur definierte Stellschrauben freigeben: Farbe, Logo, Schrift, Radius – nicht das Layout.`,`Die Systemeinstellung Hell/Dunkel respektieren und zusätzlich eine manuelle Wahl erlauben.`],[`Check customer colors for contrast automatically before they go live.`,`Expose only defined settings: color, logo, font, radius – not the layout.`,`Respect the system’s light/dark setting and also allow a manual choice.`]),
   dont:tx([`<code>color: #1F5FAD</code> direkt in einer Komponente.`,`Kunden eine Markenfarbe erlauben, auf der weißer Text unlesbar ist.`,`Den eigenen Produktnamen irgendwo stehen lassen („Powered by …“ in einer Fehlermeldung).`],[`<code>color: #1F5FAD</code> directly in a component.`,`Letting customers pick a brand color that makes white text unreadable.`,`Leaving your own product name lying around somewhere (“Powered by …” in an error message).`]),
   why:tx(`<p>White-Label heißt: ein Produkt, das unter fremdem Namen verkauft wird – eine Banking-App für zehn Banken, eine Shop-App für hundert Händler. Wirtschaftlich lohnt sich das nur, wenn eine neue Marke <em>Konfiguration</em> ist und kein Code.</p><p><strong>Design Tokens</strong> machen das möglich: benannte Werte für Farbe, Schrift, Abstand, Radius. Komponenten kennen nur den Namen, die Marke liefert den Wert. Dieselbe Zwischenebene ermöglicht Dark Mode: Hell und Dunkel sind einfach zwei Wertesätze für dieselben Namen.</p>`,`<p>White label means a product that’s sold under someone else’s name – one banking app for ten banks, one shop app for a hundred retailers. It only pays off if a new brand is <em>configuration</em>, not code.</p><p><strong>Design tokens</strong> make that possible: named values for color, font, spacing, radius. Components know only the name; the brand supplies the value. The same in-between layer enables dark mode: light and dark are simply two sets of values for the same names.</p>`),
-  here:tx(`Wechsle oben die Marke: Name, Logo, Farbe, Schrift und Eckenradius der ganzen App ändern sich, der Code bleibt derselbe. Intern heißt das Produkt „UI-Atlas“ – in der Oberfläche taucht dieser Name nirgends auf, selbst der Browser-Tab zeigt den Namen der Marke.`,`Switch the brand above: the name, logo, color, font and corner radius of the entire app change, while the code stays the same. Internally, the product is called “UI Atlas” – that name appears nowhere in the interface; even the browser tab shows the brand’s name.`)
+  here:tx(`Wechsle oben die Marke: Name, Farbe, Schrift und Eckenradius der ganzen App ändern sich, der Code bleibt derselbe. Nur das App-Symbol oben links bleibt. Intern heißt das Produkt „UI-Atlas“ – in der Oberfläche taucht dieser Name nirgends auf, selbst der Browser-Tab zeigt den Namen der Marke.`,`Switch the brand above: the name, color, font and corner radius of the entire app change, while the code stays the same. Only the app icon at the top left stays. Internally, the product is called “UI Atlas” – that name appears nowhere in the interface; even the browser tab shows the brand’s name.`)
 }
 ];
 const dots=n=>'<span class="gd"></span>'.repeat(n);
@@ -3162,7 +3163,7 @@ function ratio(a,b){const[x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return(x+0.05)/(
 function applyBrand(b,notify){
   if(!BRANDS[b])b='fjord';
   document.documentElement.dataset.brand=b;store.set('brand',b);
-  $('#brand-select').value=b;$('#logo-mark').textContent=BRANDS[b].letter;$('#app-name').textContent=BRANDS[b].app;
+  $('#brand-select').value=b;$('#app-name').textContent=BRANDS[b].app;
   updateTitle();
   window.dispatchEvent(new Event('themechange'));
   if(notify)toast({msg:tx(`Marke „${BRANDS[b].name}“ aktiv. Gleicher Code, andere Tokens.`,`Brand “${BRANDS[b].name}” active. Same code, different tokens.`),duration:3500});
