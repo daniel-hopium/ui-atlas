@@ -50,9 +50,9 @@ Die WCAG-Chips in den Lektionen verlinken direkt auf das jeweilige Kriterium.
 
 ## Gut & Schlecht
 
-77 UI-Details als Paar – links die schlechte, rechts die gute Variante, beide live zum
-Ausprobieren (`index.html#details`). Sechs Bereiche: Formulare, Buttons & Klicks,
-Feedback, Text & Layout, Navigation & Inhalte und Feinschliff. Jedes Paar hat eine eigene Adresse
+92 UI-Details als Paar – links die schlechte, rechts die gute Variante, beide live zum
+Ausprobieren (`index.html#details`). Sieben Bereiche: Formulare, Buttons & Klicks,
+Feedback, Text & Layout, Navigation & Inhalte, Feinschliff und Neue Plattform. Jedes Paar hat eine eigene Adresse
 (`#details/radio-label`).
 
 Das Quiz (`#details-quiz`) zeigt die Paare ohne Etikett als Variante A und B. Vor jeder

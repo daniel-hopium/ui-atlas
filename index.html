@@ -1228,6 +1228,132 @@ dialog.sheet{margin:auto auto 0;width:min(560px,100%);max-width:100%;border-radi
 .du-pal li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--radius-sm);font-size:.9375rem;cursor:pointer}
 .du-pal li[aria-selected="true"]{background:var(--brand-soft)}
 @media (prefers-reduced-motion: reduce){.du-imgslot .du-img{transition:none}}
+/* Gut & Schlecht: Neue Plattform */
+.du-vt-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.du-vt-l button{width:100%;display:grid;gap:4px;padding:4px;border:0;border-radius:var(--radius-sm);background:none;color:inherit;font:inherit;font-size:.875rem;text-align:left;cursor:pointer}
+.du-vt-l button:hover{background:var(--surface-2)}
+.du-vt-img{display:block;aspect-ratio:1;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--c1),var(--c2))}
+.du-vt-d{display:grid;gap:10px}
+.du-vt-big{aspect-ratio:16/9}
+.du-vt-d p{margin:2px 0 8px}
+::view-transition-group(*){animation-duration:.35s}
+.du-sp{height:200px;overflow:auto;position:relative;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.du-sp p{margin:10px 12px;font-size:.875rem}
+.du-sp-bar{position:sticky;top:0;height:6px;background:var(--surface-2)}
+.du-sp-bar span{display:block;height:100%;background:var(--brand);transform-origin:left;transform:scaleX(0)}
+@keyframes du-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){.du-sp-good .du-sp-bar span{animation:du-grow linear both;animation-timeline:scroll(nearest)}}
+.du-ha-i,.du-ha-good details,.du-faq-i{border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:6px;background:var(--surface)}
+.du-ha-h,.du-ha-good summary{width:100%;min-height:44px;display:flex;align-items:center;padding:0 12px;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:700;text-align:left;cursor:pointer}
+.du-ha-p{margin:0;padding:0 12px 12px;font-size:.9375rem}
+.du-ha-panel{max-height:0;overflow:hidden}
+.du-ha-panel.open{max-height:500px}
+.du-ha-good{interpolate-size:allow-keywords}
+.du-ha-good details::details-content{block-size:0;overflow:clip}
+.du-ha-good details[open]::details-content{block-size:auto}
+@media (prefers-reduced-motion:no-preference){
+  .du-ha-panel{transition:max-height .5s ease}
+  .du-ha-good details::details-content{transition:block-size .3s ease,content-visibility .3s allow-discrete}
+  .du-pop-m{transition:opacity .15s,display .15s allow-discrete,overlay .15s allow-discrete}
+  @starting-style{.du-pop-m:popover-open{opacity:0}}
+}
+.du-pc{height:120px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);display:flex;align-items:center}
+.du-pc-row{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 4px 4px 12px;font-size:.9375rem}
+.du-pc-row>span:first-child{display:inline-flex;align-items:center;gap:6px}
+.du-pc-row .ic{width:18px;height:18px}
+.du-rel{position:relative}
+.du-menu{display:grid;min-width:10rem;padding:4px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.du-menu[hidden]{display:none}
+.du-menu button{min-height:40px;padding:0 12px;border:0;border-radius:var(--radius-sm);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.du-menu button:hover{background:var(--surface-2)}
+.du-menu-abs{position:absolute;top:100%;right:0;z-index:2}
+.du-pop-m:not(:popover-open){display:none}
+.du-pop-m:popover-open{display:grid}
+@supports (anchor-name:--a){.du-pop-m{margin:4px 0;inset:auto;position-area:bottom span-left;position-try-fallbacks:flip-block}}
+.du-ab{position:relative;height:150px;overflow:hidden;border:1px dashed var(--line-strong);border-radius:var(--radius-sm)}
+.du-ab-tl{position:absolute;top:8px;left:8px}
+.du-ab-br{position:absolute;bottom:8px;right:8px}
+.du-ab-wrap .du-ab-btn{position:static}
+.du-ab .btn .ic{width:16px;height:16px}
+.du-tip{display:none;width:max-content;max-width:12rem;padding:6px 10px;border-radius:var(--radius-sm);background:var(--toast-bg);color:var(--toast-ink);font-size:.8125rem;line-height:1.35;z-index:3}
+.du-tip-bad{position:absolute;top:calc(100% + 4px);left:0}
+.du-tip-good{position:absolute;top:calc(100% + 4px);left:0}
+@supports (anchor-name:--a){.du-tip-good{top:auto;left:auto;margin:4px;position-area:bottom span-right;position-try-fallbacks:flip-block,flip-inline,flip-block flip-inline}}
+.du-ab-btn:is(:hover,:focus-visible)+.du-tip,.du-ab-wrap:has(.du-ab-btn:is(:hover,:focus-visible)) .du-tip{display:block}
+.du-cm-host{position:relative;min-height:150px;display:grid;gap:8px;justify-items:start;align-content:start}
+.du-cm{position:absolute;inset:-16px;display:grid;place-items:center;background:color-mix(in srgb,var(--ink) 35%,transparent)}
+.du-cm[hidden]{display:none}
+.du-cm-box{display:grid;gap:8px;padding:14px;border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow)}
+.du-cm-box h3,.du-show dialog h3{margin:0;font-size:1rem}
+.du-flag{display:inline-block;width:20px;height:14px;border-radius:2px;margin-right:8px;vertical-align:-2px;box-shadow:0 0 0 1px var(--line);flex:none}
+.du-flag-at{background:linear-gradient(#ED2939 33.3%,#fff 33.3% 66.6%,#ED2939 66.6%)}
+.du-flag-de{background:linear-gradient(#000 33.3%,#DD0000 33.3% 66.6%,#FFCE00 66.6%)}
+.du-flag-it{background:linear-gradient(90deg,#009246 33.3%,#fff 33.3% 66.6%,#CE2B37 66.6%)}
+.du-flag-ch{background:radial-gradient(#fff 0 0) center/12% 60% no-repeat,radial-gradient(#fff 0 0) center/42% 20% no-repeat,#DA291C}
+.du-dd-l{font-weight:700}
+.du-dd{position:relative;max-width:16rem}
+.du-dd-btn{display:flex;align-items:center;min-height:44px;padding:0 12px;border:1.5px solid var(--line-strong);border-radius:var(--radius-ctl);background:var(--surface);cursor:pointer}
+.du-dd-arr{margin-left:auto;color:var(--muted)}
+.du-dd-list{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:2;padding:4px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);box-shadow:var(--shadow)}
+.du-dd-list[hidden]{display:none}
+.du-dd-o{display:flex;align-items:center;min-height:40px;padding:0 10px;border-radius:var(--radius-sm);cursor:pointer}
+.du-dd-o:hover{background:var(--surface-2)}
+@supports (appearance:base-select){
+  .du-bs,.du-bs::picker(select){appearance:base-select}
+  .du-bs{max-width:16rem;width:100%}
+  .du-bs::picker(select){padding:4px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+  .du-bs option{display:flex;align-items:center;min-height:40px;padding:0 10px;border-radius:var(--radius-sm)}
+  .du-bs option:is(:hover,:focus){background:var(--surface-2)}
+  .du-bs option:checked{font-weight:700}
+  .du-bs selectedcontent{display:flex;align-items:center}
+}
+.du-grow{resize:none;min-height:3.2lh}
+.du-grow-good{field-sizing:content;max-height:12lh}
+.du-uv .du-uv-m{display:none}
+.du-uv-bad .input:invalid{border-color:var(--danger);border-width:2px}
+.du-uv-bad .input:invalid+.du-uv-m{display:flex}
+.du-uv-good .input:user-invalid{border-color:var(--danger);border-width:2px}
+.du-uv-good .input:user-invalid+.du-uv-m{display:flex}
+.du-uv .err .ic{width:18px;height:18px;flex:none}
+.du-cq-hint{margin:0 0 6px}
+.du-cq-box,.du-tw-box{resize:horizontal;overflow:auto;width:100%;min-width:150px;max-width:100%;padding:8px;border:1px dashed var(--line-strong);border-radius:var(--radius-sm);background:var(--surface)}
+.du-cq-good{container-type:inline-size}
+.du-cq-card{display:grid;gap:10px;align-items:start}
+.du-cq-card b{display:block;line-height:1.3}
+.du-cq-card p{margin:2px 0 6px}
+.du-cq-img{display:block;min-height:90px;border-radius:var(--radius-sm);background:linear-gradient(135deg,#F4A261,#E76F51)}
+.du-cq-price{font:800 1.125rem/1 var(--font-display)}
+@media (min-width:600px){.du-cq-bad .du-cq-card{grid-template-columns:120px minmax(0,1fr)}}
+@container (min-width:22rem){.du-cq-good .du-cq-card{grid-template-columns:120px minmax(0,1fr)}}
+.du-plans{display:grid;gap:8px}
+.du-plan{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 12px;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);cursor:pointer}
+.du-plan input{width:18px;height:18px;margin:0;accent-color:var(--brand);flex:none}
+.du-plan b,.du-plan small{display:block;line-height:1.3}
+.du-plan small{color:var(--muted);font-size:.8125rem}
+.du-plan-p{margin-left:auto;font-weight:800}
+.du-has-good .du-plan:has(:checked){border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 1px var(--brand)}
+.du-has-good .du-plan:has(:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.du-has-good .du-plan input:focus-visible{outline:none}
+.du-tw-box h4{margin:0 0 6px;font:800 1.25rem/1.25 var(--font-display)}
+.du-tw-box p{margin:0;font-size:.9375rem}
+.du-tw-good h4{text-wrap:balance}
+.du-tw-good p{text-wrap:pretty}
+.du-ldk{display:grid;gap:10px;justify-items:start}
+.du-ldk .du-ldk-card{color-scheme:light}
+.du-ldk.dark .du-ldk-card{color-scheme:dark}
+.du-ldk-card{width:100%;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid #D0D7DE}
+.du-ldk-card p{margin:6px 0 0;font-size:.9375rem}
+.du-ldk-badge{padding:2px 10px;border-radius:999px;font-size:.8125rem;font-weight:700}
+.du-ldk-bad .du-ldk-card{background:#FFFFFF;color:#1B1B1B}
+.du-ldk-bad .du-ldk-badge{background:#FFF3B0;color:#5C4600}
+.du-ldk-bad.dark .du-ldk-card{background:#1C2128;color:#E6EDF3;border-color:#3D444D}
+.du-ldk-bad.dark .du-ldk-badge{color:#FFE58A}
+.du-ldk-good .du-ldk-card{background:light-dark(#FFFFFF,#1C2128);color:light-dark(#1B1B1B,#E6EDF3);border-color:light-dark(#D0D7DE,#3D444D)}
+.du-ldk-good .du-ldk-badge{background:light-dark(#FFF3B0,#4A3B00);color:light-dark(#5C4600,#FFE58A)}
+.du-faq-a[hidden="until-found"]{display:block!important}
+.du-in{position:relative}
+.du-in-ov{position:absolute;inset:-6px;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:var(--radius-sm);background:color-mix(in srgb,var(--surface) 75%,transparent);font-weight:700}
+.du-in-ov[hidden]{display:none}
 @media (prefers-reduced-motion: reduce){.du-spin{animation-duration:2.4s}}
 a.logo{color:inherit;text-decoration:none;border-radius:var(--radius-sm);padding:2px 8px 2px 2px;margin-left:-2px}
 a.logo:hover{background:var(--surface-2)}
@@ -3799,7 +3925,7 @@ const KOMPASS=[
 const K_BY_ID=Object.fromEntries(KOMPASS.map(k=>[k.id,k]));
 
 /* ---------- Gut & Schlecht ---------- */
-const D_GROUPS=tx(['Formulare','Buttons & Klicks','Feedback','Text & Layout','Navigation & Inhalte','Feinschliff'],['Forms','Buttons & clicks','Feedback','Text & layout','Navigation & content','Polish']);
+const D_GROUPS=tx(['Formulare','Buttons & Klicks','Feedback','Text & Layout','Navigation & Inhalte','Feinschliff','Neue Plattform'],['Forms','Buttons & clicks','Feedback','Text & layout','Navigation & content','Polish','New platform']);
 const duValid=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 const duTime=()=>new Intl.DateTimeFormat(LOCALE,{hour:'2-digit',minute:'2-digit'}).format(new Date());
 function duList(el,names,bad){
@@ -4325,6 +4451,187 @@ function duTypeConfirm(el,good){
   $('.du-no',el).addEventListener('click',()=>{out.textContent=tx('Behalten – nichts passiert.','Kept – nothing happened.')});
 }
 
+/* ---------- Gut & Schlecht: Neue Plattform ----------
+   Links der alte Weg mit Bibliothek oder Trick, rechts das, was der Browser inzwischen selbst kann.
+   duSup() sagt im Hinweis unter dem Paar, ob der eigene Browser das schon unterstützt. */
+const duSup=ok=>ok?tx('<b>Dein Browser kann das schon.</b> Rechts siehst du die native Lösung.','<b>Your browser already supports this.</b> On the right you see the native solution.')
+  :tx('<b>Dein Browser kann das noch nicht.</b> Rechts siehst du deshalb den Rückfall – probier es in einem aktuellen Chrome oder Edge.','<b>Your browser doesn’t support this yet.</b> So on the right you see the fallback – try it in a current Chrome or Edge.');
+const duCan={
+  vt:!!document.startViewTransition,
+  scrollTl:CSS.supports('animation-timeline','scroll()'),
+  interp:CSS.supports('interpolate-size','allow-keywords'),
+  popover:'popover' in HTMLElement.prototype,
+  anchor:CSS.supports('anchor-name','--a'),
+  invoker:'command' in HTMLButtonElement.prototype,
+  closedby:'closedBy' in HTMLDialogElement.prototype,
+  baseSelect:CSS.supports('appearance','base-select'),
+  fieldSizing:CSS.supports('field-sizing','content'),
+  userInvalid:CSS.supports('selector(:user-invalid)'),
+  cq:CSS.supports('container-type','inline-size'),
+  has:CSS.supports('selector(:has(a))'),
+  pretty:CSS.supports('text-wrap','pretty'),
+  lightDark:CSS.supports('color','light-dark(#000,#fff)'),
+  untilFound:'onbeforematch' in document.documentElement,
+  inert:'inert' in HTMLElement.prototype
+};
+
+/* View Transitions */
+let duVtN=0;
+function duVtHTML(){return `<div class="du-vt"></div>`}
+function duVt(el,good){
+  const box=$('.du-vt',el);
+  const PL=tx([['Dachstein','#8ECAE6','#219EBC','Gletscher, Klettersteige, 2995 m'],['Grundlsee','#90BE6D','#2A9D8F','Badesee im Ausseerland, 709 m'],['Schöckl','#F4A261','#E76F51','Hausberg von Graz, 1445 m']],[['Dachstein','#8ECAE6','#219EBC','Glacier, via ferratas, 2,995 m'],['Grundlsee','#90BE6D','#2A9D8F','Swimming lake in the Ausseerland, 709 m'],['Schöckl','#F4A261','#E76F51','Graz’s local mountain, 1,445 m']]);
+  const img=(p,cls='')=>`<span class="du-vt-img${cls}" style="--c1:${p[1]};--c2:${p[2]}"></span>`;
+  const list=()=>{box.innerHTML=`<ul class="du-vt-l">${PL.map((p,i)=>`<li><button type="button" data-v="${i}">${img(p)}<b>${p[0]}</b></button></li>`).join('')}</ul>`};
+  const detail=i=>{const p=PL[i];box.innerHTML=`<div class="du-vt-d" data-i="${i}">${img(p,' du-vt-big')}<div><b>${p[0]}</b><p class="hint">${p[3]}</p><button type="button" class="btn btn-ghost du-sm du-vt-back">${ic('back')} ${tx('Zurück','Back')}</button></div></div>`};
+  const go=(swap,from,target,focus)=>{
+    if(!good||!duCan.vt||reducedMotion()){swap();focus();return}
+    const name='du-vt-'+(++duVtN);from.style.viewTransitionName=name;
+    const t=document.startViewTransition(()=>{swap();const to=target();if(to)to.style.viewTransitionName=name});
+    t.ready.catch(()=>{});
+    t.finished.finally(()=>{$$('.du-vt-img',box).forEach(x=>x.style.viewTransitionName='')});
+    t.updateCallbackDone.then(focus);
+  };
+  box.addEventListener('click',e=>{
+    const b=e.target.closest('[data-v]');
+    if(b){const i=+b.dataset.v;go(()=>detail(i),$('.du-vt-img',b),()=>$('.du-vt-big',box),()=>$('.du-vt-back',box).focus());return}
+    if(e.target.closest('.du-vt-back')){const i=+$('.du-vt-d',box).dataset.i;go(list,$('.du-vt-big',box),()=>$(`[data-v="${i}"] .du-vt-img`,box),()=>$(`[data-v="${i}"]`,box).focus())}
+  });
+  list();
+}
+
+/* Lesefortschritt per Scroll-Timeline */
+function duProgHTML(good){return `<div class="du-sp${good?' du-sp-good':''}" tabindex="0" role="region" aria-label="${tx('Artikel zum Scrollen','Article to scroll')}"><div class="du-sp-bar" aria-hidden="true"><span></span></div>${duLorem()}${duLorem()}</div>`}
+function duProg(el,good){
+  const box=$('.du-sp',el),bar=$('.du-sp-bar span',el);
+  const set=()=>{const max=box.scrollHeight-box.clientHeight;bar.style.transform=`scaleX(${max?box.scrollTop/max:0})`};
+  if(good){if(!duCan.scrollTl){box.addEventListener('scroll',()=>requestAnimationFrame(set),{passive:true});set()}return}
+  /* typischer Weg: gedrosselter Scroll-Listener – ruckelt und bleibt am Ende gern stehen */
+  let last=0;bar.style.transform='scaleX(0)';
+  box.addEventListener('scroll',()=>{const now=Date.now();if(now-last<200)return;last=now;set()},{passive:true});
+}
+
+/* Animation auf height: auto */
+function duAutoHTML(good){
+  const Q=tx([['Wie lange dauert der Versand?','Ein bis zwei Werktage innerhalb Österreichs.'],['Kann ich zurückgeben?','Ja, 30 Tage lang kostenlos.']],[['How long does shipping take?','One to two business days within Austria.'],['Can I return items?','Yes, free of charge for 30 days.']]);
+  return good?`<div class="du-ha du-ha-good">${Q.map(([q,a])=>`<details><summary>${q}</summary><p class="du-ha-p">${a}</p></details>`).join('')}</div>`
+    :`<div class="du-ha du-ha-bad">${Q.map(([q,a],i)=>`<div class="du-ha-i"><button type="button" class="du-ha-h" aria-expanded="false" aria-controls="{p}-${i}">${q}</button><div class="du-ha-panel" id="{p}-${i}"><p class="du-ha-p">${a}</p></div></div>`).join('')}</div>`;
+}
+function duAuto(el){
+  el.addEventListener('click',e=>{const b=e.target.closest('.du-ha-h');if(!b)return;const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));$('#'+b.getAttribute('aria-controls'),el).classList.toggle('open',open)});
+}
+
+/* Popover statt eigenem Menü */
+function duPopHTML(good){
+  const items=tx(['Umbenennen','Teilen','Löschen'],['Rename','Share','Delete']).map(t=>`<button type="button" data-act>${t}</button>`).join('');
+  return `<div class="du-pc"><div class="du-pc-row"><span>${ic('file')} ${tx('Bericht.pdf','Report.pdf')}</span>${good
+    ?`<button type="button" class="icon-btn" popovertarget="{p}-m" aria-label="${tx('Aktionen','Actions')}" style="anchor-name:--{p}">${ic('more')}</button><div popover id="{p}-m" class="du-menu du-pop-m" style="position-anchor:--{p}">${items}</div>`
+    :`<span class="du-rel"><button type="button" class="icon-btn du-pm" aria-expanded="false" aria-label="${tx('Aktionen','Actions')}">${ic('more')}</button><div class="du-menu du-menu-abs" hidden>${items}</div></span>`}</div></div><p class="du-out" role="status"></p>`;
+}
+function duPop(el,good){
+  const out=$('.du-out',el);
+  el.addEventListener('click',e=>{
+    const a=e.target.closest('[data-act]');
+    if(a){out.textContent=tx(`„${a.textContent}“ gewählt.`,`“${a.textContent}” selected.`);if(good)$('[popover]',el).hidePopover?.();else{$('.du-menu',el).hidden=true;$('.du-pm',el).setAttribute('aria-expanded','false')}return}
+    const b=e.target.closest('.du-pm');if(b){const m=$('.du-menu',el);m.hidden=!m.hidden;b.setAttribute('aria-expanded',String(!m.hidden))}
+  });
+}
+
+/* Anchor Positioning */
+function duAnchorHTML(good){
+  const tip=tx('Kopiert den Link in die Zwischenablage.','Copies the link to the clipboard.');
+  const btn=(pos,k)=>good
+    ?`<button type="button" class="btn btn-secondary du-sm du-ab-btn du-ab-${pos}" style="anchor-name:--{p}-${k}" aria-describedby="{p}-t${k}">${ic('link')} ${tx('Link','Link')}</button><span role="tooltip" class="du-tip du-tip-good" id="{p}-t${k}" style="position-anchor:--{p}-${k}">${tip}</span>`
+    :`<span class="du-ab-wrap du-ab-${pos}"><button type="button" class="btn btn-secondary du-sm du-ab-btn" aria-describedby="{p}-t${k}">${ic('link')} ${tx('Link','Link')}</button><span role="tooltip" class="du-tip du-tip-bad" id="{p}-t${k}">${tip}</span></span>`;
+  return `<div class="du-ab">${btn('tl',1)}${btn('br',2)}</div>`;
+}
+
+/* Dialog ohne JavaScript */
+function duDlgHTML(good){
+  const body=`<h3 id="{p}-h">${tx('Einstellungen','Settings')}</h3><label class="du-choice"><input type="checkbox" checked>${tx('Benachrichtigungen','Notifications')}</label>`;
+  return good
+    ?`<button type="button" class="btn btn-secondary du-sm du-dl-open" commandfor="{p}-d" command="show-modal">${ic('gear')} ${tx('Einstellungen','Settings')}</button><dialog id="{p}-d" closedby="any" aria-labelledby="{p}-h"><div class="dlg-in">${body}<div class="btn-row dlg-actions"><button type="button" class="btn btn-primary du-sm du-dl-close" commandfor="{p}-d" command="close">${tx('Fertig','Done')}</button></div></div></dialog>`
+    :`<div class="du-cm-host"><button type="button" class="btn btn-secondary du-sm du-dl-open">${ic('gear')} ${tx('Einstellungen','Settings')}</button><p class="hint">${tx('Dahinter: weitere Knöpfe der Seite.','Behind it: more buttons on the page.')}</p><button type="button" class="btn btn-ghost du-sm">${tx('Abmelden','Sign out')}</button><div class="du-cm" hidden><div class="du-cm-box" role="dialog" aria-labelledby="{p}-h">${body}<div class="btn-row"><button type="button" class="btn btn-primary du-sm du-dl-close">${tx('Fertig','Done')}</button></div></div></div></div>`;
+}
+function duDlg2(el,good){
+  if(!good){const cm=$('.du-cm',el);el.addEventListener('click',e=>{if(e.target.closest('.du-dl-open'))cm.hidden=false;if(e.target.closest('.du-dl-close'))cm.hidden=true});return}
+  /* Rückfall für Browser ohne Invoker Commands oder closedby */
+  const d=$('dialog',el),open=$('.du-dl-open',el);
+  if(!duCan.invoker){open.addEventListener('click',()=>d.showModal());$('.du-dl-close',el).addEventListener('click',()=>d.close())}
+  if(!duCan.closedby)d.addEventListener('click',e=>{if(e.target===d)d.close()});
+  d.addEventListener('close',()=>open.focus());
+}
+
+/* Gestaltbares Select */
+const DU_LANDS=()=>tx([['at','Österreich'],['de','Deutschland'],['it','Italien'],['ch','Schweiz']],[['at','Austria'],['de','Germany'],['it','Italy'],['ch','Switzerland']]);
+function duSelectHTML(good){
+  const L=DU_LANDS();
+  return good
+    ?`<div class="field"><label for="{p}">${tx('Land','Country')}</label><select class="du-bs" id="{p}"><button><selectedcontent></selectedcontent></button>${L.map(([c,n])=>`<option value="${c}"><span class="du-flag du-flag-${c}"></span>${n}</option>`).join('')}</select></div><p class="du-out" role="status"></p>`
+    :`<div class="field"><span class="du-dd-l">${tx('Land','Country')}</span><div class="du-dd"><div class="du-dd-btn"><span class="du-flag du-flag-at"></span>${L[0][1]}<span class="du-dd-arr">▾</span></div><div class="du-dd-list" hidden>${L.map(([c,n])=>`<div class="du-dd-o" data-c="${c}"><span class="du-flag du-flag-${c}"></span>${n}</div>`).join('')}</div></div></div><p class="du-out" role="status"></p>`;
+}
+function duSelect(el,good){
+  const out=$('.du-out',el),L=Object.fromEntries(DU_LANDS());
+  if(good){$('select',el).addEventListener('change',e=>{out.textContent=tx(`Gewählt: ${L[e.target.value]}`,`Selected: ${L[e.target.value]}`)});return}
+  const btn=$('.du-dd-btn',el),list=$('.du-dd-list',el);
+  el.addEventListener('click',e=>{
+    if(e.target.closest('.du-dd-btn')){list.hidden=!list.hidden;return}
+    const o=e.target.closest('.du-dd-o');if(o){btn.innerHTML=`<span class="du-flag du-flag-${o.dataset.c}"></span>${L[o.dataset.c]}<span class="du-dd-arr">▾</span>`;list.hidden=true;out.textContent=tx(`Gewählt: ${L[o.dataset.c]}`,`Selected: ${L[o.dataset.c]}`)}
+  });
+}
+
+/* Textfeld wächst mit */
+function duGrowHTML(good){return `<div class="field"><label for="{p}">${tx('Notiz','Note')}</label><textarea class="input du-ta du-grow${good?' du-grow-good':''}" id="{p}" rows="2">${tx('Treffpunkt 8 Uhr am Parkplatz.\nProviant für zwei Tage mitnehmen.\nRegenjacke nicht vergessen!\nRückfahrt mit dem Bus um 17 Uhr.','Meet at 8 a.m. at the parking lot.\nBring food for two days.\nDon’t forget a rain jacket!\nBus back at 5 p.m.')}</textarea></div>`}
+function duGrow(el,good){
+  if(!good||duCan.fieldSizing)return;
+  const t=$('textarea',el),fit=()=>{t.style.height='auto';t.style.height=t.scrollHeight+2+'px'};
+  t.addEventListener('input',fit);requestAnimationFrame(fit);
+}
+
+/* :user-invalid */
+function duUiHTML(good){return `<form class="du-stack du-uv${good?' du-uv-good':' du-uv-bad'}"><div class="field"><label for="{p}-n">Name</label><input class="input" id="{p}-n" required autocomplete="off"><p class="err du-uv-m">${ic('alert')}${tx('Bitte gib deinen Namen ein.','Please enter your name.')}</p></div><div class="field"><label for="{p}-e">${tx('E-Mail','Email')}</label><input class="input" id="{p}-e" type="email" required autocomplete="off"><p class="err du-uv-m">${ic('alert')}${tx('Bitte gib eine gültige E-Mail-Adresse ein.','Please enter a valid email address.')}</p></div><div><button class="btn btn-primary du-sm">${tx('Weiter','Continue')}</button></div><p class="du-out" role="status"></p></form>`}
+function duUi(el){$('form',el).addEventListener('submit',e=>{e.preventDefault();$('.du-out',el).textContent=tx('Weiter geht’s.','On we go.')})}
+
+/* Container Queries */
+function duCqHTML(good){return `<p class="hint du-cq-hint">${tx('Zieh die Ecke unten rechts, um den Platz zu ändern.','Drag the bottom-right corner to change the space.')}</p><div class="du-cq-box${good?' du-cq-good':' du-cq-bad'}"><article class="du-cq-card"><span class="du-cq-img" aria-hidden="true"></span><div><b>${tx('Wanderschuh Alpin GTX','Alpine GTX hiking boot')}</b><p class="hint">${tx('Wasserdicht, 640 g, Vibram-Sohle','Waterproof, 640 g, Vibram sole')}</p><span class="du-cq-price">${new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR'}).format(149)}</span></div></article></div>`}
+
+/* :has() */
+function duHasHTML(good){
+  const P=tx([['Basis','Für den Anfang','0 €'],['Plus','Alle Funktionen','6 €'],['Team','Bis 10 Personen','18 €']],[['Basic','To get started','€0'],['Plus','All features','€6'],['Team','Up to 10 people','€18']]);
+  return `<fieldset class="du-fs${good?' du-has-good':''}"><legend>${tx('Tarif','Plan')}</legend><div class="du-plans">${P.map(([n,d,p],i)=>`<label class="du-plan"><input type="radio" name="{p}"${i===1?' checked':''}><span><b>${n}</b><small>${d}</small></span><span class="du-plan-p">${p}</span></label>`).join('')}</div></fieldset>`;
+}
+
+/* text-wrap */
+function duWrapHTML(good){return `<p class="hint du-cq-hint">${tx('Zieh die Ecke unten rechts, um die Breite zu ändern.','Drag the bottom-right corner to change the width.')}</p><div class="du-tw-box${good?' du-tw-good':''}"><h4>${tx('Neue Wanderwege rund um den Grundlsee für die ganze Familie','New hiking trails around Lake Grundlsee for the whole family')}</h4><p>${tx('Drei neue Rundwege führen jetzt durch Wald und an Almen vorbei. Alle sind gut beschildert und auch mit Kinderwagen machbar.','Three new loop trails now lead through forests and past alpine pastures. All are well signposted and doable with a stroller.')}</p></div>`}
+
+/* light-dark() */
+function duLdHTML(good){return `<div class="du-ldk${good?' du-ldk-good':' du-ldk-bad'}"><div class="du-ldk-card"><div class="du-split"><b>${tx('Tour am Samstag','Saturday tour')}</b><span class="du-ldk-badge">${tx('Nur noch 2 Plätze','Only 2 spots left')}</span></div><p>${tx('Treffpunkt 8 Uhr, Dauer etwa 5 Stunden.','Meet at 8 a.m., about 5 hours.')}</p></div><button type="button" class="btn btn-secondary du-sm du-ldk-t" aria-pressed="false">${tx('Dunkles Design','Dark theme')}</button></div>`}
+function duLd(el){const w=$('.du-ldk',el),b=$('.du-ldk-t',el);b.addEventListener('click',()=>{const d=!w.classList.contains('dark');w.classList.toggle('dark',d);b.setAttribute('aria-pressed',String(d))})}
+
+/* hidden="until-found" */
+function duFindHTML(good){
+  const F=tx([['Wie storniere ich eine Buchung?','Bis 48 Stunden vorher kostenlos, danach fällt eine Stornogebühr von 20 % an.'],['Gibt es Gruppenrabatt?','Ab sechs Personen gibt es 10 % Rabatt.'],['Was passiert bei Schlechtwetter?','Wir verschieben die Tour oder erstatten den Preis.']],[['How do I cancel a booking?','Free up to 48 hours before; after that a cancellation fee of 20% applies.'],['Is there a group discount?','Groups of six or more get 10% off.'],['What happens in bad weather?','We postpone the tour or refund the price.']]);
+  return `<div class="du-faq">${F.map(([q,a],i)=>`<div class="du-faq-i"><button type="button" class="du-ha-h" aria-expanded="false" aria-controls="{p}-${i}">${q}</button><div class="du-faq-a" id="{p}-${i}" ${good&&duCan.untilFound?'hidden="until-found"':'hidden'}><p class="du-ha-p">${a}</p></div></div>`).join('')}</div>`;
+}
+function duFind(el,good){
+  const setOpen=(b,open)=>{b.setAttribute('aria-expanded',String(open));const p=$('#'+b.getAttribute('aria-controls'),el);if(open)p.removeAttribute('hidden');else if(good&&duCan.untilFound)p.setAttribute('hidden','until-found');else p.hidden=true};
+  el.addEventListener('click',e=>{const b=e.target.closest('.du-ha-h');if(b)setOpen(b,b.getAttribute('aria-expanded')!=='true')});
+  if(good&&duCan.untilFound)$$('.du-faq-a',el).forEach(p=>p.addEventListener('beforematch',()=>setOpen($(`[aria-controls="${p.id}"]`,el),true)));
+}
+
+/* inert */
+function duInertHTML(){return `<div class="du-in"><form class="du-stack du-in-form"><div class="field"><label for="{p}">${tx('Titel','Title')}</label><input class="input" id="{p}" value="${tx('Wochenplan','Weekly plan')}"></div><div><button class="btn btn-primary du-sm">${tx('Speichern','Save')}</button></div></form><div class="du-in-ov" hidden tabindex="-1"><span class="du-spin du-spin-inline"></span>${tx('Wird gespeichert …','Saving…')}</div></div><p class="du-out" role="status"></p>`}
+function duInert(el,good){
+  const f=$('form',el),i=$('input',el),ov=$('.du-in-ov',el),out=$('.du-out',el);let busy=false;
+  f.addEventListener('submit',e=>{
+    e.preventDefault();if(busy)return;busy=true;const v0=i.value;out.textContent='';ov.hidden=false;
+    if(good){f.inert=true;ov.focus()}
+    duLater(el,()=>{busy=false;ov.hidden=true;f.inert=false;
+      out.textContent=i.value===v0?tx(`Gespeichert: „${v0}“.`,`Saved: “${v0}”.`):tx(`Gespeichert wurde „${v0}“ – im Feld steht aber „${i.value}“.`,`“${v0}” was saved – but the field now says “${i.value}”.`);
+      if(good)$('button',f).focus()},4000);
+  });
+}
+
 /* Jedes Paar: bad/good sind HTML mit {p} als eindeutigem Präfix, init(el) macht sie lebendig */
 const DUELS=[
 {id:'radio-label',grp:0,topic:tx('Radio-Buttons','Radio buttons'),title:tx('Radio-Button: Der Text gehört zur Klickfläche','Radio button: the text belongs to the click area'),lesson:'forms',
@@ -4795,6 +5102,95 @@ const DUELS=[
  bad:duTypeHTML(false),good:duTypeHTML(true),
  init:{bad(el){duTypeConfirm(el,false)},good(el){duTypeConfirm(el,true)}},
  why:tx('Bei wirklich Unumkehrbarem mit großer Tragweite – ein ganzes Projekt, ein Konto, eine Produktionsdatenbank – reicht ein Klick nicht, der passiert aus Gewohnheit. Den Namen eintippen zwingt dazu, zu lesen, <i>was</i> gelöscht wird, und schützt vor dem falschen Tab. Nur dafür einsetzen; bei Alltäglichem gilt weiter: <a href="#details/confirm-undo">Rückgängig schlägt Nachfrage</a>.','For truly irreversible actions with big consequences – a whole project, an account, a production database – one click isn’t enough; it happens out of habit. Typing the name forces people to read <i>what</i> is being deleted and protects against the wrong tab. Use it only for that; for everyday actions, this still applies: <a href="#details/confirm-undo">Undo beats confirmation</a>.')}
+,
+
+/* Neue Plattform */
+{id:'view-transition',grp:6,topic:tx('Detailansicht','Detail view'),title:tx('Übergänge, die zeigen, wo man hinkommt','Transitions that show where you’re going'),lesson:'motion',
+ try:tx('Öffne in beiden ein Bild und geh zurück. Wo warst du gerade?','Open a picture in both and go back. Where were you just now?'),
+ bad:duVtHTML(),good:duVtHTML(),
+ init:{bad(el){duVt(el,false)},good(el){duVt(el,true)}},
+ why:tx('Ohne Übergang wird die Ansicht schlagartig getauscht – man verliert kurz die Orientierung. <code>document.startViewTransition()</code> macht daraus eine Bewegung: Das angeklickte Bild wächst in die Detailansicht und schrumpft beim Zurück wieder an seinen Platz. Der Browser fotografiert dafür vorher und nachher und blendet über – ohne eigene Animationslogik. Mit <code>@view-transition { navigation: auto }</code> geht das sogar zwischen echten Seiten. Bei „Bewegung reduzieren“ entfällt die Animation.','Without a transition, the view is swapped abruptly – you briefly lose your bearings. <code>document.startViewTransition()</code> turns that into motion: the clicked picture grows into the detail view and shrinks back into place on the way back. The browser takes snapshots before and after and blends between them – no animation logic of your own. With <code>@view-transition { navigation: auto }</code> this even works between real pages. With “reduce motion”, the animation is skipped.'),
+ note:duSup(duCan.vt)},
+{id:'scroll-timeline',grp:6,topic:tx('Lesefortschritt','Reading progress'),title:tx('Fortschrittsbalken ohne Scroll-Listener','Progress bar without a scroll listener'),lesson:'motion',
+ try:tx('Scroll in beiden langsam und dann schnell bis ganz nach unten. Wo steht der Balken am Ende?','Scroll slowly in both, then quickly all the way down. Where does the bar end up?'),
+ bad:duProgHTML(false),good:duProgHTML(true),
+ init:{bad(el){duProg(el,false)},good(el){duProg(el,true)}},
+ why:tx('Fortschrittsbalken hingen bisher an einem <code>scroll</code>-Listener im Hauptthread – meist gedrosselt, damit nichts ruckelt. Dann hinkt der Balken hinterher oder bleibt knapp vor dem Ende stehen. <code>animation-timeline: scroll()</code> verknüpft eine CSS-Animation direkt mit der Scrollposition: flüssig, ohne JavaScript und abseits des Hauptthreads. <code>view()</code> macht dasselbe für Elemente, die ins Bild kommen.','Progress bars used to hang off a <code>scroll</code> listener on the main thread – usually throttled so nothing stutters. Then the bar lags behind or stops just short of the end. <code>animation-timeline: scroll()</code> ties a CSS animation directly to the scroll position: smooth, without JavaScript and off the main thread. <code>view()</code> does the same for elements coming into view.'),
+ note:duSup(duCan.scrollTl)},
+{id:'height-auto',grp:6,topic:tx('Aufklappen','Expanding'),title:tx('Animieren auf height: auto – ohne max-height-Trick','Animating to height: auto – without the max-height hack'),lesson:'motion',
+ try:tx('Klapp in beiden eine Frage auf und gleich wieder zu. Achte aufs Zuklappen.','Open a question in both and close it again right away. Watch the closing.'),
+ bad:duAutoHTML(false),good:duAutoHTML(true),
+ init:{bad(el){duAuto(el)}},
+ why:tx('Auf <code>height: auto</code> ließ sich nie animieren. Der verbreitete Trick ist <code>max-height: 500px</code> – dann stimmt das Tempo nicht: Kurzer Inhalt klappt viel zu schnell auf, und beim Zuklappen passiert erst einmal nichts, weil die Animation bei 500 px beginnt. <code>interpolate-size: allow-keywords</code> erlaubt Übergänge auf <code>auto</code>, und mit <code>::details-content</code> animiert sogar ein natives <code>&lt;details&gt;</code>. Wo das fehlt, klappt es einfach ohne Animation auf.','You could never animate to <code>height: auto</code>. The common hack is <code>max-height: 500px</code> – and then the timing is off: short content opens far too fast, and on closing nothing happens at first because the animation starts at 500 px. <code>interpolate-size: allow-keywords</code> allows transitions to <code>auto</code>, and with <code>::details-content</code> even a native <code>&lt;details&gt;</code> animates. Where that’s missing, it simply opens without animation.'),
+ note:duSup(duCan.interp)},
+{id:'popover',grp:6,topic:tx('Aktionsmenü','Action menu'),title:tx('Menüs in der obersten Ebene statt im z-index-Krieg','Menus in the top layer instead of a z-index war'),lesson:'overlays',
+ try:tx('Öffne in beiden das ⋯-Menü. Dann klick daneben oder drück Escape.','Open the ⋯ menu in both. Then click elsewhere or press Escape.'),
+ bad:duPopHTML(false),good:duPopHTML(true),
+ init:{bad(el){duPop(el,false)},good(el){duPop(el,true)}},
+ why:tx('Selbstgebaute Menüs kämpfen mit drei Problemen: <code>overflow: hidden</code> eines Elternelements schneidet sie ab, sie geraten in z-index-Kriege, und Schließen per Klick daneben oder Escape muss man selbst bauen. Das Attribut <code>popover</code> legt das Menü in die oberste Ebene (Top Layer), wo nichts es abschneidet, schließt bei Klick daneben und mit Escape und gibt den Fokus zurück. <code>popovertarget</code> verbindet den Button ohne JavaScript, und <code>@starting-style</code> blendet es beim Erscheinen weich ein.','Hand-built menus fight three problems: a parent’s <code>overflow: hidden</code> clips them, they end up in z-index wars, and closing on an outside click or Escape has to be built by hand. The <code>popover</code> attribute puts the menu in the top layer, where nothing clips it, closes it on an outside click and on Escape, and returns focus. <code>popovertarget</code> wires up the button without JavaScript, and <code>@starting-style</code> fades it in smoothly as it appears.'),
+ note:duSup(duCan.popover)},
+{id:'anchor-position',grp:6,topic:'Tooltip',title:tx('Der Tooltip weicht dem Rand aus','The tooltip moves away from the edge'),lesson:'overlays',
+ try:tx('Zeig auf beide Knöpfe oder spring mit Tab hin – vor allem auf den unten rechts.','Hover over both buttons or Tab to them – especially the one at the bottom right.'),
+ bad:duAnchorHTML(false),good:duAnchorHTML(true),
+ why:tx('Tooltips und Menüs am Rand: Mit festen Koordinaten ragen sie aus dem Bild oder werden abgeschnitten. Deshalb gab es Bibliotheken wie Popper oder Floating UI, die in JavaScript nachmessen. Anchor Positioning macht das in CSS: <code>anchor-name</code> am Auslöser, <code>position-area</code> am Tooltip, und <code>position-try-fallbacks: flip-block</code> klappt ihn auf die andere Seite, wenn der Platz nicht reicht.','Tooltips and menus at the edge: with fixed coordinates, they stick out or get clipped. That’s why libraries like Popper or Floating UI measure things in JavaScript. Anchor positioning does it in CSS: <code>anchor-name</code> on the trigger, <code>position-area</code> on the tooltip, and <code>position-try-fallbacks: flip-block</code> flips it to the other side when there isn’t enough room.'),
+ note:duSup(duCan.anchor)},
+{id:'native-dialog',grp:6,topic:tx('Einstellungsdialog','Settings dialog'),title:tx('Der eingebaute Dialog statt eines Eigenbaus','The built-in dialog instead of a home-made one'),lesson:'dialog',
+ try:tx('Öffne in beiden die Einstellungen. Drück Escape, klick daneben, spring mit Tab herum.','Open the settings in both. Press Escape, click outside, Tab around.'),
+ bad:duDlgHTML(false),good:duDlgHTML(true),
+ init:{bad(el){duDlg2(el,false)},good(el){duDlg2(el,true)}},
+ why:tx('Selbstgebaute Modals vergessen fast immer etwas: den Fokus in den Dialog setzen und dort halten, Escape, Klick auf den Hintergrund, den Fokus danach zurückgeben. <code>&lt;dialog&gt;</code> mit <code>showModal()</code> bringt das alles mit. Neu: Invoker Commands (<code>commandfor</code> und <code>command="show-modal"</code>) öffnen ihn ganz ohne JavaScript, und <code>closedby="any"</code> schließt ihn auch per Klick daneben.','Home-made modals almost always forget something: moving focus into the dialog and keeping it there, Escape, clicking the backdrop, returning focus afterwards. <code>&lt;dialog&gt;</code> with <code>showModal()</code> brings all of that. New: invoker commands (<code>commandfor</code> and <code>command="show-modal"</code>) open it without any JavaScript, and <code>closedby="any"</code> also closes it on an outside click.'),
+ note:duSup(duCan.invoker&&duCan.closedby)},
+{id:'base-select',grp:6,topic:tx('Länderauswahl','Country picker'),title:tx('Ein gestaltbares Select statt eines Div-Dropdowns','A stylable select instead of a div dropdown'),lesson:'forms',
+ try:tx('Wähl in beiden ein Land – einmal mit der Maus, einmal nur mit der Tastatur (Tab, Pfeiltasten).','Pick a country in both – once with the mouse, once with only the keyboard (Tab, arrow keys).'),
+ bad:duSelectHTML(false),good:duSelectHTML(true),
+ init:{bad(el){duSelect(el,false)},good(el){duSelect(el,true)}},
+ why:tx('Weil sich <code>&lt;select&gt;</code> nicht gestalten ließ, bauen Projekte eigene Dropdowns aus <code>&lt;div&gt;</code>s – und verlieren dabei Tastatur, Screenreader, Formular-Anbindung und die native Auswahl am Handy. Mit <code>appearance: base-select</code> wird das echte <code>&lt;select&gt;</code> voll gestaltbar: Bilder in den Optionen, <code>::picker(select)</code> für die Liste, <code>&lt;selectedcontent&gt;</code> für die Anzeige. Ältere Browser zeigen einfach das normale Select.','Because <code>&lt;select&gt;</code> couldn’t be styled, projects build their own dropdowns out of <code>&lt;div&gt;</code>s – and lose the keyboard, screen readers, form integration and the native picker on phones. With <code>appearance: base-select</code>, the real <code>&lt;select&gt;</code> becomes fully stylable: images in the options, <code>::picker(select)</code> for the list, <code>&lt;selectedcontent&gt;</code> for the display. Older browsers simply show the regular select.'),
+ note:duSup(duCan.baseSelect)},
+{id:'field-sizing',grp:6,topic:tx('Notizfeld','Note field'),title:tx('Das Textfeld wächst mit dem Inhalt','The text field grows with its content'),lesson:'forms',
+ try:tx('Lies die Notiz in beiden und schreib noch zwei Zeilen dazu.','Read the note in both and add two more lines.'),
+ bad:duGrowHTML(false),good:duGrowHTML(true),
+ init:{good(el){duGrow(el,true)}},
+ why:tx('Ein zu kleines Textfeld mit eigenem Scrollbalken versteckt, was man geschrieben hat – man scrollt in einem Mini-Fenster. Bisher half nur JavaScript, das bei jeder Eingabe die Höhe nachmisst. <code>field-sizing: content</code> lässt Textfelder und Inputs mit dem Inhalt wachsen; <code>min-height</code> und <code>max-height</code> setzen die Grenzen.','A text field that’s too small, with its own scrollbar, hides what you wrote – you scroll inside a tiny window. So far only JavaScript helped, measuring the height on every keystroke. <code>field-sizing: content</code> lets text areas and inputs grow with their content; <code>min-height</code> and <code>max-height</code> set the limits.'),
+ note:duSup(duCan.fieldSizing)},
+{id:'user-invalid',grp:6,topic:tx('Pflichtfelder','Required fields'),title:tx('Rot erst, wenn jemand das Feld angefasst hat','Red only once someone has touched the field'),lesson:'forms',
+ try:tx('Nur hinschauen – dann eins der Felder anklicken und wieder verlassen.','Just look – then click into one of the fields and leave it again.'),
+ bad:duUiHTML(false),good:duUiHTML(true),
+ init:{bad(el){duUi(el)},good(el){duUi(el)}},
+ why:tx('Wer Pflichtfelder nur mit CSS rot färbt, erwischt mit <code>:invalid</code> auch Felder, die noch niemand angefasst hat – das Formular ist voller Fehler, bevor man anfängt. <code>:user-invalid</code> greift erst, nachdem jemand das Feld bearbeitet und verlassen hat oder absenden wollte: „früh loben, spät tadeln“ ohne eine Zeile JavaScript. Das Gegenstück heißt <code>:user-valid</code>.','If you color required fields red with CSS alone, <code>:invalid</code> also catches fields nobody has touched yet – the form is full of errors before you start. <code>:user-invalid</code> only applies once someone has edited and left the field or tried to submit: “praise early, scold late” without a line of JavaScript. Its counterpart is <code>:user-valid</code>.'),
+ note:duSup(duCan.userInvalid)},
+{id:'container-queries',grp:6,topic:tx('Produktkarte','Product card'),title:tx('Die Karte richtet sich nach ihrem Platz, nicht nach dem Bildschirm','The card adapts to its space, not to the screen'),lesson:'responsive',
+ try:tx('Zieh in beiden die Ecke unten rechts nach links, bis die Karte schmal ist.','In both, drag the bottom-right corner to the left until the card is narrow.'),
+ bad:duCqHTML(false),good:duCqHTML(true),
+ why:tx('Media Queries fragen die Bildschirmbreite – ein Bauteil weiß aber nicht, ob es in der breiten Hauptspalte oder in einer schmalen Seitenleiste steht. Mit <code>container-type: inline-size</code> und <code>@container</code> richtet sich die Karte nach dem Platz, den sie tatsächlich hat. Dieselbe Komponente funktioniert dann überall – ideal für Design-Systeme.','Media queries ask about the screen width – but a component doesn’t know whether it sits in the wide main column or a narrow sidebar. With <code>container-type: inline-size</code> and <code>@container</code>, the card adapts to the space it actually has. The same component then works everywhere – ideal for design systems.'),
+ note:duSup(duCan.cq)},
+{id:'has-selector',grp:6,topic:tx('Tarifwahl','Choosing a plan'),title:tx('Die ganze Karte zeigt die Auswahl – mit :has()','The whole card shows the selection – with :has()'),lesson:'forms',
+ try:tx('Wähl in beiden einen anderen Tarif – auch mit Tab und Pfeiltasten.','Pick a different plan in both – also with Tab and the arrow keys.'),
+ bad:duHasHTML(false),good:duHasHTML(true),
+ why:tx('Früher musste JavaScript dem Elternelement eine Klasse geben, damit eine Karte zeigt, dass ihr Radio ausgewählt ist – also blieb es oft beim kleinen Punkt. <code>:has()</code> wählt Eltern nach ihren Kindern: <code>.karte:has(:checked)</code> hebt die ganze Karte hervor, <code>:has(:focus-visible)</code> zeigt den Fokusring an der Karte. Läuft seit 2023 in allen Browsern.','JavaScript used to have to put a class on the parent so a card could show its radio was selected – so it often stayed at the little dot. <code>:has()</code> selects parents by their children: <code>.card:has(:checked)</code> highlights the whole card, <code>:has(:focus-visible)</code> puts the focus ring on the card. Works in all browsers since 2023.'),
+ note:duSup(duCan.has)},
+{id:'text-wrap',grp:6,topic:tx('Überschrift','Headline'),title:tx('Ausgewogene Zeilen statt eines einsamen Worts','Balanced lines instead of a lonely word'),lesson:'typography',
+ try:tx('Zieh in beiden die Ecke unten rechts und schau auf die letzte Zeile der Überschrift.','In both, drag the bottom-right corner and watch the last line of the headline.'),
+ bad:duWrapHTML(false),good:duWrapHTML(true),
+ why:tx('Überschriften brechen oft so um, dass ein einzelnes Wort in der letzten Zeile hängt. <code>text-wrap: balance</code> verteilt die Wörter gleichmäßig auf die Zeilen (für kurze Texte bis etwa sechs Zeilen), <code>text-wrap: pretty</code> verhindert bei Fließtext einzelne Wörter am Absatzende. Eine Zeile CSS statt manueller Umbrüche, die bei jeder anderen Breite falsch sitzen.','Headlines often wrap so a single word dangles on the last line. <code>text-wrap: balance</code> spreads the words evenly across the lines (for short texts up to about six lines), <code>text-wrap: pretty</code> avoids single words at the end of body paragraphs. One line of CSS instead of manual line breaks that sit wrong at every other width.'),
+ note:duSup(duCan.pretty)},
+{id:'light-dark',grp:6,topic:tx('Hell und Dunkel','Light and dark'),title:tx('Helle und dunkle Farbe stehen beisammen','Light and dark colors stay together'),lesson:'white-label',
+ try:tx('Schalte in beiden auf „Dunkles Design“ und lies das Etikett.','Switch both to “Dark theme” and read the label.'),
+ bad:duLdHTML(false),good:duLdHTML(true),
+ init:{bad(el){duLd(el)},good(el){duLd(el)}},
+ why:tx('Getrennte Blöcke für Hell und Dunkel driften auseinander: Irgendwann wird eine Farbe nur in einem Block geändert oder vergessen, und im dunklen Design steht helle Schrift auf hellem Grund. <code>light-dark(hell, dunkel)</code> hält beide Werte in einer Zeile beisammen und richtet sich nach <code>color-scheme</code> – auch für einzelne Bereiche. Was zusammengehört, steht zusammen.','Separate blocks for light and dark drift apart: at some point a color is changed in only one block, or forgotten, and the dark theme shows light text on a light background. <code>light-dark(light, dark)</code> keeps both values together on one line and follows <code>color-scheme</code> – even for individual areas. What belongs together stays together.'),
+ note:duSup(duCan.lightDark)},
+{id:'until-found',grp:6,topic:'FAQ',title:tx('Zugeklapptes bleibt mit Strg+F auffindbar','Collapsed content stays findable with Ctrl+F'),lesson:'search-filter',
+ try:tx('Drück Strg+F (⌘+F) und such nach „Stornogebühr“.','Press Ctrl+F (⌘+F) and search for “cancellation fee”.'),
+ bad:duFindHTML(false),good:duFindHTML(true),
+ init:{bad(el){duFind(el,false)},good(el){duFind(el,true)}},
+ why:tx('Zugeklappte Inhalte mit <code>display: none</code> findet die Suche im Browser nicht – wer mit Strg+F nach einem Begriff sucht, bekommt „0 Treffer“, obwohl die Antwort auf der Seite steht. <code>hidden="until-found"</code> versteckt den Inhalt, lässt ihn aber durchsuchen; bei einem Treffer feuert <code>beforematch</code>, der Abschnitt klappt auf und der Treffer wird markiert. Ein natives <code>&lt;details&gt;</code> kann das in neueren Browsern schon von selbst.','Collapsed content hidden with <code>display: none</code> can’t be found by the browser’s search – anyone looking for a term with Ctrl+F gets “0 results”, even though the answer is on the page. <code>hidden="until-found"</code> hides the content but keeps it searchable; on a match, <code>beforematch</code> fires, the section expands and the match is highlighted. A native <code>&lt;details&gt;</code> already does this by itself in newer browsers.'),
+ note:duSup(duCan.untilFound)},
+{id:'inert',grp:6,topic:tx('Speichern','Saving'),title:tx('Ein Overlay sperrt auch die Tastatur','An overlay locks out the keyboard, too'),lesson:'focus',
+ try:tx('Klick auf „Speichern“, drück dann Umschalt+Tab und tipp etwas, solange gespeichert wird.','Click “Save”, then press Shift+Tab and type something while it’s saving.'),
+ bad:duInertHTML(),good:duInertHTML(),
+ init:{bad(el){duInert(el,false)},good(el){duInert(el,true)}},
+ why:tx('Ein halbtransparentes Overlay sperrt nur die Maus. Mit Tab erreicht man weiter alles dahinter, Screenreader lesen es vor – und man kann Daten ändern, während sie gespeichert werden. Das Attribut <code>inert</code> macht einen ganzen Bereich unerreichbar: nicht klickbar, nicht fokussierbar, für Screenreader unsichtbar. Gut für Ladezustände, Seitenleisten und alles, was den Rest kurz sperrt. Modale <code>&lt;dialog&gt;</code>s machen das schon von selbst.','A semi-transparent overlay only locks out the mouse. With Tab you still reach everything behind it, screen readers read it out – and you can change data while it’s being saved. The <code>inert</code> attribute makes a whole area unreachable: not clickable, not focusable, invisible to screen readers. Good for loading states, side drawers and anything that briefly locks the rest. Modal <code>&lt;dialog&gt;</code>s already do this by themselves.'),
+ note:duSup(duCan.inert)}
 ];
 function duChips(el,good){
   const box=$('.du-chips',el);let cities=tx(['Wien','Graz','Linz','Salzburg'],['Vienna','Graz','Linz','Salzburg']);
@@ -5016,7 +5412,7 @@ function duQuizInit(root){
 }
 
 const DUELL_PAGES=[
- {id:'details',title:tx('Detail-Galerie','Detail gallery'),icon:'star',short:tx(`${DUELS.length} UI-Details als Paar: schlecht und gut, beide zum Ausprobieren.`,`${DUELS.length} UI details as pairs: bad and good, both ready to try.`),keys:'gut schlecht vergleich details mikro radio label cursor pointer hover klickfläche passwort pflichtfeld iban tabs karussell accordion hamburger kontrast leerer zustand fehlermeldung linktext feinschliff spinner verzögerung entwurf autosave offline warteschlange otp einmalcode tastenkürzel befehlspalette scrollposition url zustand tab-titel kopiert zeitangabe plural polish delay draft queue one-time code shortcuts command palette scroll position tab title copied relative time good bad comparison micro click area hit area password required field carousel contrast empty state error message link text',render:duGalleryHTML,init:duGalleryInit,
+ {id:'details',title:tx('Detail-Galerie','Detail gallery'),icon:'star',short:tx(`${DUELS.length} UI-Details als Paar: schlecht und gut, beide zum Ausprobieren.`,`${DUELS.length} UI details as pairs: bad and good, both ready to try.`),keys:'gut schlecht vergleich details mikro radio label cursor pointer hover klickfläche passwort pflichtfeld iban tabs karussell accordion hamburger kontrast leerer zustand fehlermeldung linktext feinschliff spinner verzögerung entwurf autosave offline warteschlange otp einmalcode tastenkürzel befehlspalette scrollposition url zustand tab-titel kopiert zeitangabe plural polish delay draft queue one-time code shortcuts command palette scroll position tab title copied relative time neue plattform view transition popover anchor dialog select field-sizing user-invalid container query has text-wrap light-dark until-found inert new platform good bad comparison micro click area hit area password required field carousel contrast empty state error message link text',render:duGalleryHTML,init:duGalleryInit,
   docTitle:sub=>D_BY[sub]?tx(`${D_BY[sub].title} · Gut & Schlecht`,`${D_BY[sub].title} · Good & Bad`):tx('Gut & Schlecht: UI-Details','Good & Bad: UI details'),focus:(root,sub)=>D_BY[sub]&&$('#du-'+sub+'-h',root)},
  {id:'details-quiz',title:tx('Quiz: Was ist besser?','Quiz: Which is better?'),icon:'check',short:tx('Paare ohne Etikett – erkennst du die gute Variante? Mit Lernstand und „Fehler üben“.','Unlabeled pairs – can you spot the good option? With progress tracking and “Practice mistakes”.'),keys:'quiz raten spiel test gut schlecht lernstand fehler üben serie guess game good bad progress practice mistakes streak',render:duQuizHTML,init:duQuizInit}
 ];

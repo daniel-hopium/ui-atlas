@@ -13,6 +13,12 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Neuer Bereich „Neue Plattform“ in Gut & Schlecht mit 15 Paaren: links der alte Weg mit
+  Bibliothek oder Trick, rechts das, was der Browser inzwischen selbst kann – View Transitions,
+  Scroll-Timeline, Animation auf height: auto, Popover, Anchor Positioning, Dialog mit Invoker
+  Commands und closedby, gestaltbares Select, field-sizing, :user-invalid, Container Queries,
+  :has(), text-wrap, light-dark(), hidden="until-found" und inert. Unter jedem Paar steht live,
+  ob der eigene Browser das schon kann; sonst zeigt die rechte Seite einen Rückfall.
 - Die Kacheln der Schwester-Apps zeigen jetzt deren echtes App-Symbol statt eines
   allgemeinen Icons.
 - Im Kopf steht jetzt das App-Symbol statt des Buchstabens der Marke. Der Markenwechsel
