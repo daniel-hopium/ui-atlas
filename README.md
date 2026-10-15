@@ -1,8 +1,10 @@
-# Daumenregel – UI-Pattern-Library
+# UI-Atlas – UI-Patterns zum Anfassen
 
 Eine selbsterklärende Web-App, die UI-Best-Practices nicht beschreibt, sondern vorführt.
 Statt Blindtext steht in jeder Ansicht, *warum* etwas so gebaut ist – und die App hält sich
 selbst an jede Regel, die sie erklärt. Auf Deutsch und Englisch.
+
+Online: https://daniel-hopium.github.io/ui-atlas/
 
 ## Starten
 

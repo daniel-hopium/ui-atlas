@@ -1,6 +1,7 @@
 # Changelog
 
-Alle nennenswerten Änderungen an Daumenregel (pattern-library). Die Einträge beschreiben,
+Alle nennenswerten Änderungen am UI-Atlas (früher Daumenregel, Repo pattern-library).
+Die Einträge beschreiben,
 was das Projekt danach kann bzw. was sich für den Nutzer ändert – kein Commit-Protokoll.
 
 **Regel:** Jeder Commit bekommt seinen Eintrag, im selben Commit. Neues kommt oben unter
@@ -12,6 +13,9 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Neuer Name: Aus „Daumenregel“ wird „UI-Atlas“, passend zu CSS-Atlas und HTML-Atlas. Die
+  App liegt jetzt unter daniel-hopium.github.io/ui-atlas/; die alte Adresse
+  …/pattern-library/ funktioniert nicht mehr. Gespeicherte Einstellungen bleiben erhalten.
 - Sonne/Mond-Knopf in der Kopfleiste: schaltet zwischen hellem und dunklem Design um. Die
   Wahl bleibt gespeichert und ist dieselbe wie die Theme-Auswahl in der Token-Lektion; ohne
   eigene Wahl gilt weiter die Systemeinstellung.
@@ -30,7 +34,7 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
   „Fehler üben“ und ein Lernstand, den auch die Galerie zeigt.
 - Die Startseite verweist auf den CSS-Atlas, der als eigene App weiterlebt
   (daniel-hopium.github.io/css-atlas); alte Adressen wie `#css-flex/gap` leiten dorthin
-  weiter. Daumenregel bleibt damit bei UI-Regeln.
+  weiter. Der UI-Atlas bleibt damit bei UI-Regeln.
 - Gut & Schlecht: UI-Details als Paar zum Ausprobieren – vom klickbaren Radio-Text
   über Doppelklick-Bestellungen bis zu springendem Inhalt –, dazu ein Quiz, das die
   Paare ohne Etikett zeigt.
