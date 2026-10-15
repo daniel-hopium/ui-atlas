@@ -13,6 +13,8 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Die Kacheln der Schwester-Apps zeigen jetzt deren echtes App-Symbol statt eines
+  allgemeinen Icons.
 - Im Kopf steht jetzt das App-Symbol statt des Buchstabens der Marke. Der Markenwechsel
   tauscht nur noch Name, Farbe, Schrift und Eckenradius.
 - Neuer Bereich „Feinschliff“ in Gut & Schlecht mit 27 Paaren: Details, die man leicht
