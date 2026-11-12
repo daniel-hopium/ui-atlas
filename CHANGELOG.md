@@ -13,6 +13,9 @@ Kategorien: **Neu** (neue Funktionen), **Verbessert** (bestehendes Verhalten), *
 ## Unveröffentlicht
 
 ### Neu
+- Breite-Umschalter neben Sonne/Mond: Die breite Ansicht lässt die Lektion die ganze Spalte
+  neben der Liste füllen statt 48rem. Die Wahl wird gemerkt; unter 1280px ist der Knopf
+  ausgeblendet.
 - Neuer Bereich „Neue Plattform“ in Gut & Schlecht mit 15 Paaren: links der alte Weg mit
   Bibliothek oder Trick, rechts das, was der Browser inzwischen selbst kann – View Transitions,
   Scroll-Timeline, Animation auf height: auto, Popover, Anchor Positioning, Dialog mit Invoker
